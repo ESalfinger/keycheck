@@ -4,7 +4,7 @@ import {KeyHandler} from '../components/KeyHandler'
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>KeyCheck</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
@@ -15,6 +15,6 @@ const Home = () => (
       <KeyHandler/>
     </main>
   </div>
-)
+);
 
-export default Home
+export default Home;

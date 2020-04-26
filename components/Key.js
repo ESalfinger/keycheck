@@ -1,6 +1,6 @@
 export function Key(props) {
   return (
-    <div>
+    <div className={props.className}>
       <span>
         {props.location === 1 && "Left"}
         {props.location === 2 && "Right"}
