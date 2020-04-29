@@ -1,20 +1,27 @@
-import Head from 'next/head'
-import {KeyHandler} from '../components/KeyHandler'
+import {Keyboard} from "../components/Keyboard";
 
-const Home = () => (
-  <div className="container">
-    <Head>
-      <title>KeyCheck</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-
-    <main>
-      <h1 className="title">
-        Welcome to KeyCheck!
-      </h1>
-      <KeyHandler/>
-    </main>
-  </div>
-);
+function Home() {
+    return <div>
+        <Keyboard/>
+        <style global jsx>{`
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f3;
+        }
+        body {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+      `}</style>
+    </div>
+}
 
 export default Home;

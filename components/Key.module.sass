@@ -1,0 +1,91 @@
+$key-size: 7vmin
+$key-radius: $key-size * 3/20
+$key-gutter: $key-size / 10
+$key-spacing-horizontal: $key-size * 9/80
+$key-spacing-vertical: $key-size / 16
+
+$shadow-spacing: $key-size / 40
+$shadow-blur: $key-size / 20
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap')
+$comfortaa: 'Comfortaa', cursive
+
+.key
+  grid-column-end: span 4
+  grid-row-end: span 1
+  grid-template-columns: repeat(2, $key-size / 2)
+  grid-template-rows: repeat(1, $key-size)
+  border-radius: $key-radius
+  padding: $key-spacing-vertical $key-spacing-horizontal
+  margin: $key-gutter / 2
+
+  //Neormorphism
+  font-family: $comfortaa
+  font-size: $key-size / 3
+  text-align: center
+  color: #3D3D3D
+  background: #f0f0f3
+  box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
+
+  //Unit sizing
+  &.u1-25
+    grid-column-end: span 5
+    font-size: $key_size / 4
+
+  &.u1-5
+    grid-column-end: span 6
+
+  &.u1-75
+    grid-column-end: span 7
+    font-size: $key_size / 4
+
+  &.u2
+    grid-column-end: span 8
+    font-size: $key_size / 2
+
+  &.u2-25
+    grid-column-end: span 9
+    font-size: $key_size / 4
+
+  &.u2-5
+    grid-column-end: span 10
+
+  &.u2-75
+    grid-column-end: span 11
+    font-size: $key_size / 4
+
+  &.u6-25
+    grid-column-end: span 25
+
+  &.esc
+    font-size: $key_size / 4
+
+  &.tab
+    font-size: $key_size / 4
+
+  &.double
+    font-size: $key_size / 2
+
+  &.left
+    text-align: left
+
+    span
+      text-transform: none
+
+  &.right
+    text-align: right
+
+    span
+      text-transform: none
+
+  &.active
+    background: rgba(#68DEB3, .5)
+    box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
+
+  span
+    padding: $key_size / 22
+    text-transform: uppercase
+    line-height: 1.5rem
+
+    &.at
+      font-size: $key_size / 3.7

@@ -1,0 +1,10 @@
+$key-size: 7vmin
+$key-gutter: $key-size / 10
+
+.keyboard
+  display: grid
+  overflow: hidden
+  padding: 1%
+  border-radius: 1rem
+  grid-template-columns: repeat(60, ($key-size + $key-gutter) / 4)
+  grid-template-rows: repeat(5, ($key-size + $key-gutter))
