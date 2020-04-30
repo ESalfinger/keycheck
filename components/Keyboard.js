@@ -1,21 +1,25 @@
 import styles from "./Keyboard.module.sass";
 import {Key} from "./Key";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 export function Keyboard() {
+    const [clicked, setClicked] = useState(new Map());
+
     useEffect(() => {
         document.addEventListener('keydown', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            //e.location left(1) right(2) num(3)
-            /*setKey(e.key);
-            setLocation(e.location);*/
+
+            let key = `${e.location === 2 ? 'RIGHT' : e.location === 3 ? 'NUM' : ''}${e.key.toUpperCase()}`;
+            if (!clicked.has(key)) {
+                setClicked(new Map(clicked.set(key, true)));
+            }
         });
     });
 
     return (
         <div className={styles.keyboard}>
-            <Key keyVals={["Esc"]} styleName={["esc", "left"]}/>
+            <Key keyVals={["Esc"]} styleName={["esc", "left"]} active={clicked.get("ESCAPE")}/>
             <Key keyVals={["!", "1"]}/>
             <Key keyVals={["@", "2"]}/>
             <Key keyVals={["#", "3"]}/>
@@ -59,7 +63,7 @@ export function Keyboard() {
             <Key keyVals={["\"", "'"]} styleName={["double"]}/>
             <Key keyVals={["Return"]} styleName={["u2-25", "right"]}/>
 
-            <Key keyVals={["Shift"]} styleName={["u2-25", "left"]}/>
+            <Key keyVals={["Shift"]} styleName={["u2-25", "left"]} active={clicked.get("SHIFT")}/>
             <Key keyVals={["z"]}/>
             <Key keyVals={["x"]}/>
             <Key keyVals={["c"]}/>
@@ -70,7 +74,7 @@ export function Keyboard() {
             <Key keyVals={["<", ","]}/>
             <Key keyVals={[">", "."]}/>
             <Key keyVals={["?", "/"]}/>
-            <Key keyVals={["Shift"]} styleName={["u2-75", "right"]}/>
+            <Key keyVals={["Shift"]} styleName={["u2-75", "right"]} active={clicked.get("RIGHTSHIFT")}/>
 
             <Key keyVals={["Ctrl"]} styleName={["u1-25", "left"]}/>
             <Key keyVals={["Meta"]} styleName={["u1-25", "left"]}/>
