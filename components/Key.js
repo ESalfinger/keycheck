@@ -9,7 +9,7 @@ export function Key(props) {
     }
 
     return (
-        <div className={`${styleString} ${styles.key} ${props.active ? styles.active : ""}`}>
+        <div className={`${styleString} ${styles.key} ${props.clicked === 'active' ? styles.active : props.clicked === 'pressed' ? styles.pressed: ""}`}>
             {props.keyVals ? props.keyVals.map((keyVal, index) =>
                 <span key={index}>{keyVal}</span>
             ) : null}
