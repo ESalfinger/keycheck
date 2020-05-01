@@ -2,6 +2,7 @@ import {Keyboard} from "../components/Keyboard";
 import {Selection} from "../components/Selection";
 import sixtyP from "../data/60p.json";
 import {useState} from "react";
+import {Logo} from "../components/Logo";
 
 function Home() {
     const [layout, setLayout] = useState(undefined);
@@ -10,6 +11,7 @@ function Home() {
         setLayout(layout);
     }
     return <div>
+        <Logo/>
         <Selection selectionHandler={handleLayoutSelection}/>
         <Keyboard layout={sixtyP}/>
         <style global jsx>{`
@@ -26,7 +28,6 @@ function Home() {
         body {
             display: flex;
             padding: 10px;
-            align-items: center;
             justify-content: center;
         }
       `}</style>
