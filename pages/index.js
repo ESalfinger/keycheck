@@ -1,8 +1,15 @@
 import {Keyboard} from "../components/Keyboard";
+import sixtyP from "../data/60p.json";
 
 function Home() {
+    const [layout, setLayout] = useState("");
+
+    function handleLayoutSelection(layout) {
+        setLayout(layout);
+    }
     return <div>
-        <Keyboard/>
+        <Selection selectionHandler={handleLayoutSelection}></Selection>
+        <Keyboard layout={layout}/>
         <style global jsx>{`
         * {
             box-sizing: border-box;
