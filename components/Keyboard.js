@@ -2,38 +2,38 @@ import styles from "./Keyboard.module.sass";
 import {Key} from "./Key";
 import {useEffect, useState} from "react";
 
-export function Keyboard() {
+export function Keyboard(props) {
     const [clicked, setClicked] = useState(new Map());
 
-    useEffect(() => {
-        document.addEventListener('keydown', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+    function handleKeyPress(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
 
-            let key = `${e.location === 2 ? 'RIGHT' : e.location === 3 ? 'NUM' : ''}${e.key.toUpperCase()}`;
-            if (!clicked.has(key)) {
-                setClicked(new Map(clicked.set(key, true)));
-            }
-        });
+        let key = `${e.location === 2 ? 'RIGHT' : e.location === 3 ? 'NUM' : ''}${e.key.toUpperCase()}`;
+        if (!clicked.has(key)) {
+            console.log(key);
+            setClicked(new Map(clicked.set(key, "active")));
+        } else {
+            setClicked(new Map(clicked.set(key, "pressed")));
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyPress);
+        document.addEventListener('keyup', handleKeyPress);
+
+        return function cleanup() {
+            document.removeEventListener("keydown", handleKeyPress);
+            document.removeEventListener("keyup", handleKeyPress);
+        }
     });
 
     return (
         <div className={styles.keyboard}>
-            <Key keyVals={["Esc"]} styleName={["esc", "left"]} active={clicked.get("ESCAPE")}/>
-            <Key keyVals={["!", "1"]}/>
-            <Key keyVals={["@", "2"]}/>
-            <Key keyVals={["#", "3"]}/>
-            <Key keyVals={["$", "4"]}/>
-            <Key keyVals={["%", "5"]}/>
-            <Key keyVals={["^", "6"]}/>
-            <Key keyVals={["&", "7"]}/>
-            <Key keyVals={["*", "8"]}/>
-            <Key keyVals={["(", "9"]}/>
-            <Key keyVals={[")", "0"]}/>
-            <Key keyVals={["_", "-"]}/>
-            <Key keyVals={["+", "="]}/>
-            <Key keyVals={["←"]} styleName={["u2"]}/>
-
+            {props.layout.map((key, index) =>
+                <Key keyVals={key.values} styleName={key.style} clicked={clicked.get(key.key[0]) || clicked.get(key.key[1])} key={index}/>
+            )}
+            {/*
             <Key keyVals={["Tab"]} styleName={["u1-5", "tab", "left"]}/>
             <Key keyVals={["q"]}/>
             <Key keyVals={["w"]}/>
@@ -63,7 +63,7 @@ export function Keyboard() {
             <Key keyVals={["\"", "'"]} styleName={["double"]}/>
             <Key keyVals={["Return"]} styleName={["u2-25", "right"]}/>
 
-            <Key keyVals={["Shift"]} styleName={["u2-25", "left"]} active={clicked.get("SHIFT")}/>
+            <Key keyVals={["Shift"]} styleName={["u2-25", "left"]} clicked={clicked.get("SHIFT")}/>
             <Key keyVals={["z"]}/>
             <Key keyVals={["x"]}/>
             <Key keyVals={["c"]}/>
@@ -74,7 +74,7 @@ export function Keyboard() {
             <Key keyVals={["<", ","]}/>
             <Key keyVals={[">", "."]}/>
             <Key keyVals={["?", "/"]}/>
-            <Key keyVals={["Shift"]} styleName={["u2-75", "right"]} active={clicked.get("RIGHTSHIFT")}/>
+            <Key keyVals={["Shift"]} styleName={["u2-75", "right"]} clicked={clicked.get("RIGHTSHIFT")}/>
 
             <Key keyVals={["Ctrl"]} styleName={["u1-25", "left"]}/>
             <Key keyVals={["Meta"]} styleName={["u1-25", "left"]}/>
@@ -83,7 +83,7 @@ export function Keyboard() {
             <Key keyVals={["Alt"]} styleName={["u1-25", "right"]}/>
             <Key keyVals={["Fn"]} styleName={["u1-25", "right"]}/>
             <Key keyVals={["App"]} styleName={["u1-25", "right"]}/>
-            <Key keyVals={["Ctrl"]} styleName={["u1-25", "right"]}/>
+            <Key keyVals={["Ctrl"]} styleName={["u1-25", "right"]}/>*/}
         </div>
     );
 }
