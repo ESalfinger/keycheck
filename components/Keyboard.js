@@ -10,7 +10,7 @@ export function Keyboard(props) {
         e.stopImmediatePropagation();
 
         let key = `${e.location === 2 ? 'RIGHT' : e.location === 3 ? 'NUM' : ''}${e.key.toUpperCase()}`;
-        if (!clicked.has(key)) {
+        if (e.type === "keydown") {
             console.log(key);
             setClicked(new Map(clicked.set(key, "active")));
         } else {
