@@ -1,15 +1,17 @@
 import {Keyboard} from "../components/Keyboard";
+import {Selection} from "../components/Selection";
 import sixtyP from "../data/60p.json";
+import {useState} from "react";
 
 function Home() {
-    const [layout, setLayout] = useState("");
+    const [layout, setLayout] = useState(undefined);
 
     function handleLayoutSelection(layout) {
         setLayout(layout);
     }
     return <div>
-        <Selection selectionHandler={handleLayoutSelection}></Selection>
-        <Keyboard layout={layout}/>
+        <Selection selectionHandler={handleLayoutSelection}/>
+        <Keyboard layout={sixtyP}/>
         <style global jsx>{`
         * {
             box-sizing: border-box;
