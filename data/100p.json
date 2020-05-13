@@ -11,6 +11,159 @@
       "ESCAPE"
     ]
   },
+
+  {
+    "values": [
+      "F1"
+    ],
+    "style": [],
+    "key": [
+      "F1"
+    ]
+  },
+  {
+    "values": [
+      "F2"
+    ],
+    "style": [],
+    "key": [
+      "F2"
+    ]
+  },
+  {
+    "values": [
+      "F3"
+    ],
+    "style": [],
+    "key": [
+      "F3"
+    ]
+  },
+  {
+    "values": [
+      "F4"
+    ],
+    "style": [],
+    "key": [
+      "F4"
+    ]
+  },
+
+  {
+    "values": [
+      "F5"
+    ],
+    "style": [],
+    "key": [
+      "F5"
+    ]
+  },
+  {
+    "values": [
+      "F6"
+    ],
+    "style": [],
+    "key": [
+      "F6"
+    ]
+  },
+  {
+    "values": [
+      "F7"
+    ],
+    "style": [],
+    "key": [
+      "F7"
+    ]
+  },
+  {
+    "values": [
+      "F8"
+    ],
+    "style": [],
+    "key": [
+      "F8"
+    ]
+  },
+
+  {
+    "values": [
+      "F9"
+    ],
+    "style": [],
+    "key": [
+      "F9"
+    ]
+  },
+  {
+    "values": [
+      "F10"
+    ],
+    "style": [],
+    "key": [
+      "F10"
+    ]
+  },
+  {
+    "values": [
+      "F11"
+    ],
+    "style": [],
+    "key": [
+      "F11"
+    ]
+  },
+  {
+    "values": [
+      "F12"
+    ],
+    "style": [],
+    "key": [
+      "F12"
+    ]
+  },
+
+  {
+    "values": [
+      "PrtSc"
+    ],
+    "style": [],
+    "key": [
+      "PRINTSCREEN"
+    ]
+  },
+  {
+    "values": [
+      "ScrLk"
+    ],
+    "style": [],
+    "key": [
+      "SCROLLLOCK"
+    ]
+  },
+  {
+    "values": [
+      "Pause"
+    ],
+    "style": [],
+    "key": [
+      "PAUSE"
+    ]
+  },
+
+
+
+  {
+    "values": [
+      "`",
+      "~"
+    ],
+    "style": [],
+    "key": [
+      "`",
+      "~"
+    ]
+  },
   {
     "values": [
       "!",
@@ -153,6 +306,72 @@
     ]
   },
 
+  {
+    "values": [
+      "Insert"
+    ],
+    "style": [],
+    "key": [
+      "INSERT"
+    ]
+  },
+  {
+    "values": [
+      "Home"
+    ],
+    "style": [],
+    "key": [
+      "HOME"
+    ]
+  },
+  {
+    "values": [
+      "PgUp"
+    ],
+    "style": [],
+    "key": [
+      "PAGEUP"
+    ]
+  },
+
+  {
+    "values": [
+      "NumLk"
+    ],
+    "style": [],
+    "key": [
+      "NUMLOCK"
+    ]
+  },
+  {
+    "values": [
+      "/"
+    ],
+    "style": [],
+    "key": [
+      "/"
+    ]
+  },
+  {
+    "values": [
+      "*"
+    ],
+    "style": [],
+    "key": [
+      "*"
+    ]
+  },
+  {
+    "values": [
+      "-"
+    ],
+    "style": [],
+    "key": [
+      "-"
+    ]
+  },
+
+
 
 
   {
@@ -288,6 +507,71 @@
     ]
   },
 
+  {
+    "values": [
+      "Delete"
+    ],
+    "style": [],
+    "key": [
+      "DELETE"
+    ]
+  },
+  {
+    "values": [
+      "End"
+    ],
+    "style": [],
+    "key": [
+      "END"
+    ]
+  },
+  {
+    "values": [
+      "PgDn"
+    ],
+    "style": [],
+    "key": [
+      "PAGEDOWN"
+    ]
+  },
+
+  {
+    "values": [
+      "7"
+    ],
+    "style": [],
+    "key": [
+      "7"
+    ]
+  },
+  {
+    "values": [
+      "8"
+    ],
+    "style": [],
+    "key": [
+      "8"
+    ]
+  },
+  {
+    "values": [
+      "9"
+    ],
+    "style": [],
+    "key": [
+      "9"
+    ]
+  },
+  {
+    "values": [
+      "+"
+    ],
+    "style": [],
+    "key": [
+      "+"
+    ]
+  },
+
 
   {
     "values": [
@@ -412,6 +696,34 @@
     ]
   },
 
+  {
+    "values": [
+      "4"
+    ],
+    "style": [],
+    "key": [
+      "4"
+    ]
+  },
+  {
+    "values": [
+      "5"
+    ],
+    "style": [],
+    "key": [
+      "5"
+    ]
+  },
+  {
+    "values": [
+      "6"
+    ],
+    "style": [],
+    "key": [
+      "6"
+    ]
+  },
+
 
 
   {
@@ -529,6 +841,53 @@
     ]
   },
 
+  {
+    "values": [
+      "↑"
+    ],
+    "style": [],
+    "key": [
+      "ARROWUP"
+    ]
+  },
+
+  {
+    "values": [
+      "1"
+    ],
+    "style": [],
+    "key": [
+      "1"
+    ]
+  },
+  {
+    "values": [
+      "2"
+    ],
+    "style": [],
+    "key": [
+      "2"
+    ]
+  },
+  {
+    "values": [
+      "3"
+    ],
+    "style": [],
+    "key": [
+      "3"
+    ]
+  },
+  {
+    "values": [
+      "↩"
+    ],
+    "style": [],
+    "key": [
+      "ENTER"
+    ]
+  },
+
 
 
   {
@@ -600,6 +959,54 @@
     "style": ["u1-25", "right"],
     "key": [
       "RIGHTCONTROL"
+    ]
+  },
+
+  {
+    "values": [
+      "←"
+    ],
+    "style": [],
+    "key": [
+      "ARROWLEFT"
+    ]
+  },
+  {
+    "values": [
+      "↓"
+    ],
+    "style": [],
+    "key": [
+      "ARROWDOWN"
+    ]
+  },
+  {
+    "values": [
+      "→"
+    ],
+    "style": [],
+    "key": [
+      "ARROWRIGHT"
+    ]
+  },
+
+
+  {
+    "values": [
+      "0"
+    ],
+    "style": ["u2"],
+    "key": [
+      "0"
+    ]
+  },
+  {
+    "values": [
+      "."
+    ],
+    "style": [],
+    "key": [
+      "."
     ]
   }
 ]

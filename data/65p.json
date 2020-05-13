@@ -152,6 +152,17 @@
       "BACKSPACE"
     ]
   },
+  {
+    "values": [
+      "`",
+      "~"
+    ],
+    "style": [],
+    "key": [
+      "`",
+      "~"
+    ]
+  },
 
 
 
@@ -287,6 +298,16 @@
       "\\"
     ]
   },
+  {
+    "values": [
+      "delete"
+    ],
+    "style": [],
+    "key": [
+      "DELETE"
+    ]
+  },
+
 
 
   {
@@ -411,6 +432,15 @@
       "ENTER"
     ]
   },
+  {
+    "values": [
+      "PgUp"
+    ],
+    "style": [],
+    "key": [
+      "PAGEUP"
+    ]
+  },
 
 
 
@@ -523,9 +553,27 @@
     "values": [
       "Shift"
     ],
-    "style": ["u2-75", "right"],
+    "style": ["u1 -75", "right"],
     "key": [
       "RIGHTSHIFT"
+    ]
+  },
+  {
+    "values": [
+      "↑"
+    ],
+    "style": [],
+    "key": [
+      "ARROWUP"
+    ]
+  },
+  {
+    "values": [
+      "PgDn"
+    ],
+    "style": [],
+    "key": [
+      "PAGEDOWN"
     ]
   },
 
@@ -569,7 +617,7 @@
     "values": [
       "Alt"
     ],
-    "style": ["u1-25", "right"],
+    "style": ["right"],
     "key": [
       "RIGHTALT",
       "RIGHTALTGRAPH"
@@ -579,27 +627,45 @@
     "values": [
       "Fn"
     ],
-    "style": ["u1-25", "right"],
+    "style": ["right"],
     "key": [
       "FUNCTION"
     ]
   },
   {
     "values": [
-      "App"
+      "Ctrl"
     ],
-    "style": ["u1-25", "right"],
+    "style": ["right"],
     "key": [
-      "CONTEXTMENU"
+      "RIGHTCONTROL"
     ]
   },
   {
     "values": [
-      "Ctrl"
+      "←"
     ],
-    "style": ["u1-25", "right"],
+    "style": [],
     "key": [
-      "RIGHTCONTROL"
+      "ARROWLEFT"
+    ]
+  },
+  {
+    "values": [
+      "↓"
+    ],
+    "style": [],
+    "key": [
+      "ARROWDOWN"
+    ]
+  },
+  {
+    "values": [
+      "→"
+    ],
+    "style": [],
+    "key": [
+      "ARROWRIGHT"
     ]
   }
 ]
