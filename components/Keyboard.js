@@ -29,7 +29,7 @@ export function Keyboard(props) {
     });
 
     return (
-        <div className={styles.keyboard}>
+        <div className={styles[props.type]}>
             {props.layout.map((key, index) =>
                 <Key keyVals={key.values}
                      styleName={key.style}
