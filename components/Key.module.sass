@@ -74,8 +74,14 @@
     span
       text-transform: none
 
+  &.num0
+    font-size: $key-size / 3
+
   &.arrow
     font-family: Arial, serif
+
+  &.r2
+    grid-row-end: span 2
 
   &.active
     background: rgba(#68DEB3, .5)
@@ -114,6 +120,9 @@
     &.mod
       font-size: $key_size / 4 * $standard-multiplicator
 
+    &.num0
+      font-size: $key-size / 3 * $standard-multiplicator
+
   &.pressed
     background: rgba(#68DEB3, .5)
     box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
@@ -142,3 +151,9 @@
 
   &.u3-5
     grid-column-end: span 14
+
+  &.u4
+    grid-column-end: span 16
+
+  &.u4-5
+    grid-column-end: span 18

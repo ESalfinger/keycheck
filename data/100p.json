@@ -11,6 +11,13 @@
       "ESCAPE"
     ]
   },
+  {
+    "values": [],
+    "style": [
+      "empty"
+    ],
+    "key": []
+  },
 
   {
     "values": [
@@ -48,7 +55,14 @@
       "F4"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "F5"
@@ -85,7 +99,14 @@
       "F8"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "F9"
@@ -122,21 +143,28 @@
       "F12"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
-      "PrtSc"
+      "Print"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PRINTSCREEN"
     ]
   },
   {
     "values": [
-      "ScrLk"
+      "Scroll"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "SCROLLLOCK"
     ]
@@ -145,12 +173,19 @@
     "values": [
       "Pause"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAUSE"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u4-5"
+    ],
+    "key": []
+  },
 
 
   {
@@ -300,17 +335,24 @@
     "values": [
       "←"
     ],
-    "style": ["u2"],
+    "style": ["u2", "arrow"],
     "key": [
       "BACKSPACE"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
-      "Insert"
+      "Ins"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "INSERT"
     ]
@@ -319,7 +361,7 @@
     "values": [
       "Home"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "HOME"
     ]
@@ -328,17 +370,24 @@
     "values": [
       "PgUp"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAGEUP"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
-      "NumLk"
+      "Num"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "NUMLOCK"
     ]
@@ -506,12 +555,19 @@
       "\\"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
-      "Delete"
+      "Del"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "DELETE"
     ]
@@ -520,7 +576,7 @@
     "values": [
       "End"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "END"
     ]
@@ -529,12 +585,19 @@
     "values": [
       "PgDn"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAGEDOWN"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "7"
@@ -566,7 +629,7 @@
     "values": [
       "+"
     ],
-    "style": [],
+    "style": ["r2"],
     "key": [
       "+"
     ]
@@ -695,7 +758,14 @@
       "ENTER"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u4"
+    ],
+    "key": []
+  },
   {
     "values": [
       "4"
@@ -840,17 +910,31 @@
       "RIGHTSHIFT"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u1-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "↑"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWUP"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u1-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "1"
@@ -882,7 +966,7 @@
     "values": [
       "↩"
     ],
-    "style": [],
+    "style": ["r2"],
     "key": [
       "ENTER"
     ]
@@ -961,12 +1045,19 @@
       "RIGHTCONTROL"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "←"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWLEFT"
     ]
@@ -975,7 +1066,7 @@
     "values": [
       "↓"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWDOWN"
     ]
@@ -984,18 +1075,24 @@
     "values": [
       "→"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWRIGHT"
     ]
   },
-
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "0"
     ],
-    "style": ["u2"],
+    "style": ["u2", "num0"],
     "key": [
       "0"
     ]
