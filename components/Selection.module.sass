@@ -14,6 +14,7 @@
   height: $key-size * 1.5
   width: $key-size * 3
   border-radius: $key-radius
+  cursor: pointer
 
   //Neumorphism styling
   font-family: $comfortaa
@@ -24,18 +25,36 @@
   box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
 
 .active
+  background: darken(#f0f0f3, 1.0)
   box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
+  font-size: $key-size / 4 * $oversize-multiplicator
+
+  .fullSizeIcon
+    width: $key-size * 2 * $oversize-multiplicator
+    margin: $key-size / 5 * $oversize-multiplicator
+
+  .eightyPercentIcon
+    width: $key-size * 1.7 * $oversize-multiplicator
+    margin: $key-size / 5 * $oversize-multiplicator
+
+  .sixtyfivePercentIcon
+    width: $key-size * 1.6 * $oversize-multiplicator
+    margin: $key-size / 5 * $oversize-multiplicator
+
+  .sixtyPercentIcon
+    width: $key-size * 1.6 * $oversize-multiplicator
+    margin: $key-size / 5 * $oversize-multiplicator
 
 .fullSizeIcon
   width: $key-size * 2
   margin: $key-size / 5
 
 .eightyPercentIcon
-  width: $key-size * 1.8
+  width: $key-size * 1.7
   margin: $key-size / 5
 
 .sixtyfivePercentIcon
-  width: $key-size * 1.7
+  width: $key-size * 1.6
   margin: $key-size / 5
 
 .sixtyPercentIcon
