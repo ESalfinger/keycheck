@@ -71,6 +71,36 @@
   &.active
     background: rgba(#68DEB3, .5)
     box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
+    font-size: $key-size / 3 * $standard-multiplicator
+
+    &.u1-25
+      grid-column-end: span 5
+      font-size: $key_size / 4 * $oversize-multiplicator
+
+    &.u1-75
+      grid-column-end: span 7
+      font-size: $key_size / 4 * $oversize-multiplicator
+
+    &.u2
+      grid-column-end: span 8
+      font-size: $key_size / 2 * $oversize-multiplicator
+
+    &.u2-25
+      grid-column-end: span 9
+      font-size: $key_size / 4 * $oversize-multiplicator
+
+    &.u2-75
+      grid-column-end: span 11
+      font-size: $key_size / 4 * $oversize-multiplicator
+
+    &.esc
+      font-size: $key_size / 4 * $standard-multiplicator
+
+    &.tab
+      font-size: $key_size / 4 * $oversize-multiplicator
+
+    &.double
+      font-size: $key_size / 2 * $standard-multiplicator
 
   &.pressed
     background: rgba(#68DEB3, .5)
