@@ -1,7 +1,27 @@
-$key-size: 7vmin
-$key-gutter: $key-size / 10
+@import "data/variables"
 
-.keyboard
+.sixtyP
+  display: grid
+  padding: 1%
+  border-radius: 1rem
+  grid-template-columns: repeat(60, ($key-size + $key-gutter) / 4)
+  grid-template-rows: repeat(5, ($key-size + $key-gutter))
+
+.sixtyFiveP
+  display: grid
+  padding: 1%
+  border-radius: 1rem
+  grid-template-columns: repeat(64, ($key-size + $key-gutter) / 4)
+  grid-template-rows: repeat(5, ($key-size + $key-gutter))
+
+.eightyP
+  display: grid
+  padding: 1%
+  border-radius: 1rem
+  grid-template-columns: repeat(74, ($key-size + $key-gutter) / 4)
+  grid-template-rows: repeat(6, ($key-size + $key-gutter))
+
+.fullSize
   display: grid
   padding: 1%
   border-radius: 1rem

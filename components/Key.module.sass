@@ -68,6 +68,15 @@
     span
       text-transform: none
 
+  &.mod
+    font-size: $key_size / 4
+
+    span
+      text-transform: none
+
+  &.arrow
+    font-family: Arial, serif
+
   &.active
     background: rgba(#68DEB3, .5)
     box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
@@ -102,6 +111,9 @@
     &.double
       font-size: $key_size / 2 * $standard-multiplicator
 
+    &.mod
+      font-size: $key_size / 4 * $standard-multiplicator
+
   &.pressed
     background: rgba(#68DEB3, .5)
     box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
@@ -113,3 +125,20 @@
 
     &.at
       font-size: $key_size / 3.7
+
+.empty
+  grid-column-end: span 4
+  grid-row-end: span 1
+  grid-template-columns: repeat(2, $key-size / 2)
+  grid-template-rows: repeat(1, $key-size)
+  padding: $key-spacing-vertical $key-spacing-horizontal
+  margin: $key-gutter / 2
+
+  &.u0-5
+    grid-column-end: span 2
+
+  &.u1-5
+    grid-column-end: span 6
+
+  &.u3-5
+    grid-column-end: span 14
