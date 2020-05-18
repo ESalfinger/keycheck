@@ -147,7 +147,7 @@
     "values": [
       "←"
     ],
-    "style": ["u2"],
+    "style": ["u2", "arrow"],
     "key": [
       "BACKSPACE"
     ]

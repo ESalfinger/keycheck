@@ -147,7 +147,7 @@
     "values": [
       "←"
     ],
-    "style": ["u2"],
+    "style": ["u2", "arrow"],
     "key": [
       "BACKSPACE"
     ]
@@ -300,9 +300,9 @@
   },
   {
     "values": [
-      "delete"
+      "Del"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "DELETE"
     ]
@@ -436,7 +436,7 @@
     "values": [
       "PgUp"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAGEUP"
     ]
@@ -553,7 +553,7 @@
     "values": [
       "Shift"
     ],
-    "style": ["u1 -75", "right"],
+    "style": ["u1-75", "right"],
     "key": [
       "RIGHTSHIFT"
     ]
@@ -562,7 +562,7 @@
     "values": [
       "↑"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWUP"
     ]
@@ -571,7 +571,7 @@
     "values": [
       "PgDn"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAGEDOWN"
     ]
@@ -617,7 +617,7 @@
     "values": [
       "Alt"
     ],
-    "style": ["right"],
+    "style": ["right", "mod"],
     "key": [
       "RIGHTALT",
       "RIGHTALTGRAPH"
@@ -627,7 +627,7 @@
     "values": [
       "Fn"
     ],
-    "style": ["right"],
+    "style": ["right", "mod"],
     "key": [
       "FUNCTION"
     ]
@@ -636,7 +636,7 @@
     "values": [
       "Ctrl"
     ],
-    "style": ["right"],
+    "style": ["right", "mod"],
     "key": [
       "RIGHTCONTROL"
     ]
@@ -645,7 +645,7 @@
     "values": [
       "←"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWLEFT"
     ]
@@ -654,7 +654,7 @@
     "values": [
       "↓"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWDOWN"
     ]
@@ -663,7 +663,7 @@
     "values": [
       "→"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWRIGHT"
     ]

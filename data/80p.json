@@ -11,7 +11,13 @@
       "ESCAPE"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty"
+    ],
+    "key": []
+  },
   {
     "values": [
       "F1"
@@ -48,7 +54,14 @@
       "F4"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "F5"
@@ -84,6 +97,14 @@
     "key": [
       "F8"
     ]
+  },
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
   },
 
   {
@@ -122,12 +143,19 @@
       "F12"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "PrtSc"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PRINTSCREEN"
     ]
@@ -136,7 +164,7 @@
     "values": [
       "ScrLk"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "SCROLLLOCK"
     ]
@@ -145,7 +173,7 @@
     "values": [
       "Pause"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAUSE"
     ]
@@ -300,17 +328,24 @@
     "values": [
       "←"
     ],
-    "style": ["u2"],
+    "style": ["u2", "arrow"],
     "key": [
       "BACKSPACE"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "Insert"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "INSERT"
     ]
@@ -319,7 +354,7 @@
     "values": [
       "Home"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "HOME"
     ]
@@ -328,7 +363,7 @@
     "values": [
       "PgUp"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAGEUP"
     ]
@@ -468,12 +503,19 @@
       "\\"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
   {
     "values": [
       "Delete"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "DELETE"
     ]
@@ -482,7 +524,7 @@
     "values": [
       "End"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "END"
     ]
@@ -491,7 +533,7 @@
     "values": [
       "PgDn"
     ],
-    "style": [],
+    "style": ["mod"],
     "key": [
       "PAGEDOWN"
     ]
@@ -621,7 +663,14 @@
       "ENTER"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u3-5"
+    ],
+    "key": []
+  },
 
 
   {
@@ -738,17 +787,31 @@
       "RIGHTSHIFT"
     ]
   },
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u1-5"
+    ],
+    "key": []
+  },
 
   {
     "values": [
       "↑"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWUP"
     ]
   },
-
+  {
+    "values": [],
+    "style": [
+      "empty"
+    ],
+    "key": []
+  },
 
 
   {
@@ -822,12 +885,20 @@
       "RIGHTCONTROL"
     ]
   },
+  {
+    "values": [],
+    "style": [
+      "empty",
+      "u0-5"
+    ],
+    "key": []
+  },
 
   {
     "values": [
       "←"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWLEFT"
     ]
@@ -836,7 +907,7 @@
     "values": [
       "↓"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWDOWN"
     ]
@@ -845,7 +916,7 @@
     "values": [
       "→"
     ],
-    "style": [],
+    "style": ["arrow"],
     "key": [
       "ARROWRIGHT"
     ]
