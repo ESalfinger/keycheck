@@ -25,8 +25,15 @@ export function Keyboard(props) {
         return function cleanup() {
             document.removeEventListener("keydown", handleKeyPress);
             document.removeEventListener("keyup", handleKeyPress);
-        }
+        };
     });
+
+    useEffect(() => {
+        if (props.isReset) {
+            setClicked(new Map());
+            props.switchReset();
+        }
+    }, [props.isReset]);
 
     return (
         <div className={styles[props.type]}>

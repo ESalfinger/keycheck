@@ -14,16 +14,21 @@ const containerStyle = {
 function Home() {
     const [layout, setLayout] = useState(fullSize);
     const [layoutType, setLayoutType] = useState("fullSize");
+    const [reset, setReset] = useState(false);
 
     function handleLayoutSelection(layout, layoutType) {
         setLayout(layout);
         setLayoutType(layoutType);
     }
 
+    function switchReset() {
+        setReset(!reset);
+    }
+
     return <div style={containerStyle}>
         <Logo/>
         <Selection selectionHandler={handleLayoutSelection}/>
-        <Keyboard layout={layout} type={layoutType}/>
+        <Keyboard layout={layout} type={layoutType} isReset={reset} switchReset={switchReset}/>
         <style global jsx>{`
         * {
             box-sizing: border-box;
@@ -32,7 +37,7 @@ function Home() {
             background-color: #f0f0f3;
         }
       `}</style>
-        <ResetButton/>
+        <ResetButton resetHandler={switchReset}/>
     </div>
 }
 
