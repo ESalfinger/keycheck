@@ -3,6 +3,7 @@ import {Selection} from "../components/Selection";
 import {useState} from "react";
 import {Logo} from "../components/Logo";
 import fullSize from "../data/100p.json";
+import {ResetButton} from "../components/ResetButton";
 
 const containerStyle = {
     display: "flex",
@@ -31,6 +32,7 @@ function Home() {
             background-color: #f0f0f3;
         }
       `}</style>
+        <ResetButton/>
     </div>
 }
 
