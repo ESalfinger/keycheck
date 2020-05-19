@@ -11,6 +11,7 @@
   width: $key-size * 2.6
   border-radius: $key-radius * 4
   cursor: pointer
+  user-select: none
 
   //Neumorphism styling
   font-family: $comfortaa
@@ -25,7 +26,20 @@
     box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
     font-size: $key-size / 3.5 * $oversize-multiplicator
 
+  &:hover .spin
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
 
+.spin
+  -webkit-transition-duration: 1s
+  transition-duration: 1s
+  -webkit-transition-property: transform
+  transition-property: transform
+  -webkit-transition-timing-function: ease-in-out
+  transition-timing-function: ease-in-out
+  margin-right: 0.7rem
+  user-select: none
+  font-size: 1.3rem
 
 
 
