@@ -36,7 +36,7 @@ export function Keyboard(props) {
     }, [props.isReset]);
 
     return (
-        <div className={styles[props.type]}>
+        <div className={styles["k" + props.type]}>
             {props.layout.map((key, index) =>
                 <Key keyVals={key.values}
                      styleName={key.style}

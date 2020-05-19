@@ -1,9 +1,10 @@
 import {Keyboard} from "../components/Keyboard";
 import {Selection} from "../components/Selection";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Logo} from "../components/Logo";
-import fullSize from "../data/100p.json";
 import {ResetButton} from "../components/ResetButton";
+import Cookie from "js-cookie";
+import cookie from "cookie";
 
 const containerStyle = {
     display: "flex",
@@ -11,15 +12,19 @@ const containerStyle = {
     alignItems: "center"
 };
 
-function Home() {
-    const [layout, setLayout] = useState(fullSize);
-    const [layoutType, setLayoutType] = useState("fullSize");
+function Home({initialLayoutType}) {
+    const [layoutType, setLayoutType] = useState(() => initialLayoutType);
+    const [layout, setLayout] = useState(require("../data/" + layoutType + ".json"));
     const [reset, setReset] = useState(false);
 
-    function handleLayoutSelection(layout, layoutType) {
-        setLayout(layout);
+    function handleLayoutSelection(layoutType) {
+        setLayout(require("../data/" + layoutType + ".json"));
         setLayoutType(layoutType);
     }
+
+    useEffect(() => {
+        Cookie.set('layoutType', layoutType);
+    }, [layoutType]);
 
     function switchReset() {
         setReset(!reset);
@@ -27,7 +32,7 @@ function Home() {
 
     return <div style={containerStyle}>
         <Logo/>
-        <Selection selectionHandler={handleLayoutSelection}/>
+        <Selection selectionHandler={handleLayoutSelection} active={layoutType}/>
         <Keyboard layout={layout} type={layoutType} isReset={reset} switchReset={switchReset}/>
         <style global jsx>{`
         * {
@@ -39,6 +44,16 @@ function Home() {
       `}</style>
         <ResetButton resetHandler={switchReset}/>
     </div>
+}
+
+export async function getServerSideProps({req}) {
+    const cookies = cookie.parse(req ? req.headers.cookie || "" : document.cookie);
+
+    return {
+        props: {
+            initialLayoutType: cookies.layoutType || "100p",
+        },
+    }
 }
 
 export default Home;

@@ -1,29 +1,33 @@
 @import "data/variables"
 
-.sixtyP
+.k60p
   display: grid
   padding: 1%
   border-radius: 1rem
   grid-template-columns: repeat(60, ($key-size + $key-gutter) / 4)
   grid-template-rows: repeat(5, ($key-size + $key-gutter))
+  transform: scale(0.95)
 
-.sixtyFiveP
+.k65p
   display: grid
   padding: 1%
+  transform: scale(0.95)
   border-radius: 1rem
   grid-template-columns: repeat(64, ($key-size + $key-gutter) / 4)
   grid-template-rows: repeat(5, ($key-size + $key-gutter))
 
-.eightyP
+.k80p
   display: grid
   padding: 1%
+  transform: scale(0.9)
   border-radius: 1rem
   grid-template-columns: repeat(74, ($key-size + $key-gutter) / 4)
   grid-template-rows: ($key-size + $key-gutter) ($key-size/2 + $key-gutter) repeat(5, ($key-size + $key-gutter))
 
-.fullSize
+.k100p
   display: grid
   padding: 1%
   border-radius: 1rem
+  transform: scale(0.9)
   grid-template-columns: repeat(92, ($key-size + $key-gutter) / 4)
   grid-template-rows: ($key-size + $key-gutter) ($key-size/2 + $key-gutter) repeat(5, ($key-size + $key-gutter))
