@@ -37,7 +37,7 @@ export function Selection(props) {
                 <span style={noClickStyle}>65%</span><br/>
                 <img src={'keyboard65.svg'}
                      alt={"keyboard 65%"}
-                     className={styles.sixtyfivePercentIcon}
+                     className={styles.sixtyFivePercentIcon}
                      draggable="false"
                      style={noClickStyle}
                 />
