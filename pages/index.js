@@ -12,19 +12,26 @@ const containerStyle = {
     alignItems: "center"
 };
 
-function Home({initialLayoutType}) {
+function Home({initialLayoutType, initialLayout}) {
     const [layoutType, setLayoutType] = useState(() => initialLayoutType);
-    const [layout, setLayout] = useState(require("../data/" + layoutType + ".json"));
+    const [layout, setLayout] = useState(() => initialLayout);
+    const [layoutData, setLayoutData] = useState(require("../data/" + layout + "/" + layoutType + ".json"));
     const [reset, setReset] = useState(false);
 
-    function handleLayoutSelection(layoutType) {
-        setLayout(require("../data/" + layoutType + ".json"));
+    function handleLayoutTypeSelection(layoutType) {
         setLayoutType(layoutType);
+        setLayoutData(require("../data/" + layout + "/" + layoutType + ".json"));
+    }
+
+    function handleLayoutSelection(layout) {
+        setLayout(layout);
+        setLayoutData(require("../data/" + layout + "/" + layoutType + ".json"));
     }
 
     useEffect(() => {
         Cookie.set('layoutType', layoutType);
-    }, [layoutType]);
+        Cookie.set('layout', layout);
+    }, [layoutType, layout]);
 
     function switchReset() {
         setReset(!reset);
@@ -32,8 +39,8 @@ function Home({initialLayoutType}) {
 
     return <div style={containerStyle}>
         <Logo/>
-        <Selection selectionHandler={handleLayoutSelection} active={layoutType}/>
-        <Keyboard layout={layout} type={layoutType} isReset={reset} switchReset={switchReset}/>
+        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType}/>
+        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset}/>
         <style global jsx>{`
         * {
             box-sizing: border-box;
@@ -52,6 +59,7 @@ export async function getServerSideProps({req}) {
     return {
         props: {
             initialLayoutType: cookies.layoutType || "100p",
+            initialLayout: cookies.layout || "ansi"
         },
     }
 }

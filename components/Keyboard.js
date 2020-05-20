@@ -37,7 +37,7 @@ export function Keyboard(props) {
 
     return (
         <div className={styles["k" + props.type]}>
-            {props.layout.map((key, index) =>
+            {props.data.map((key, index) =>
                 <Key keyVals={key.values}
                      styleName={key.style}
                      clicked={[clicked.get(key.key[0]), clicked.get(key.key[1])].includes("active") ? "active" : clicked.get(key.key[0]) || clicked.get(key.key[1])}
