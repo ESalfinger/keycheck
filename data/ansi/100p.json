@@ -1029,10 +1029,8 @@
     "values": [
       "Fn"
     ],
-    "style": ["u1-25", "right"],
-    "key": [
-      "FUNCTION"
-    ]
+    "style": ["u1-25", "right", "dead"],
+    "key": []
   },
   {
     "values": [

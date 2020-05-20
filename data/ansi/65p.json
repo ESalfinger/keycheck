@@ -627,10 +627,8 @@
     "values": [
       "Fn"
     ],
-    "style": ["right", "mod"],
-    "key": [
-      "FUNCTION"
-    ]
+    "style": ["right", "mod", "dead"],
+    "key": []
   },
   {
     "values": [

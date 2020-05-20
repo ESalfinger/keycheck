@@ -74,6 +74,10 @@
     span
       text-transform: none
 
+  &.lower
+    span
+      text-transform: none
+
   &.num0
     font-size: $key-size / 3
 
@@ -82,6 +86,38 @@
 
   &.r2
     grid-row-end: span 2
+
+  &.return
+    grid-row-end: span 2
+    font-size: $key_size / 3
+    border-radius: 0 $key-radius $key-radius $key-radius
+    position: relative
+    box-shadow: none
+    filter: drop-shadow($shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7)) drop-shadow($shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8))
+
+    &::before, &::after
+      content: ""
+      position: absolute
+
+    &::before
+      background: #f0f0f3
+      border-radius: $key-radius 0 0 $key-radius
+      height: $key-size
+      left: -$key-size/4
+      top: 0
+      width: $key-size/4
+
+    &::after
+      border-top-right-radius: $key-radius
+      box-shadow: -$key-gutter $key-gutter 0 0 #f0f0f3 inset
+      height: $key-gutter * 2
+      left: -$key-gutter
+      top: $key-size - $key-gutter
+      width: $key-gutter * 2
+
+  &.dead
+    background: #3D3D3D
+    color: #f0f0f3
 
   &.active
     background: rgba(#68DEB3, .5)
@@ -123,9 +159,28 @@
     &.num0
       font-size: $key-size / 3 * $standard-multiplicator
 
+    &.return
+      box-shadow: none
+      font-size: $key-size / 3 * $standard-multiplicator
+      background: rgba(#68DEB3, .5)
+      filter: drop-shadow($shadow-spacing -$shadow-spacing $shadow-blur #68DEB3)
+      &::before
+        background: rgba(#68DEB3, .5)
+      &::after
+        box-shadow: -$key-gutter $key-gutter 0 0 rgba(#68DEB3, .5) inset
+
+
   &.pressed
     background: rgba(#68DEB3, .5)
     box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
+
+    &.return
+      box-shadow: none
+      filter: drop-shadow($shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, .7)) drop-shadow($shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, .8))
+      &::before
+        background: rgba(#68DEB3, .5)
+      &::after
+        box-shadow: -$key-gutter $key-gutter 0 0 rgba(#68DEB3, .5) inset
 
   span
     padding: $key_size / 22
@@ -142,6 +197,9 @@
   grid-template-rows: repeat(1, $key-size)
   padding: $key-spacing-vertical $key-spacing-horizontal
   margin: $key-gutter / 2
+
+  &.u0-25
+    grid-column-end: span 1
 
   &.u0-5
     grid-column-end: span 2
