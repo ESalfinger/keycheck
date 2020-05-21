@@ -2,15 +2,11 @@ import {Keyboard} from "../components/Keyboard";
 import {Selection} from "../components/Selection";
 import {useEffect, useState} from "react";
 import {Logo} from "../components/Logo";
+import {Nav} from "../components/Nav";
 import {ResetButton} from "../components/ResetButton";
 import Cookie from "js-cookie";
 import cookie from "cookie";
-
-const containerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-};
+import styles from "./index.module.sass";
 
 function Home({initialLayoutType, initialLayout}) {
     const [layoutType, setLayoutType] = useState(() => initialLayoutType);
@@ -37,8 +33,9 @@ function Home({initialLayoutType, initialLayout}) {
         setReset(!reset);
     }
 
-    return <div style={containerStyle}>
+    return <div className={styles.containerStyle}>
         <Logo/>
+        <Nav />
         <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType}/>
         <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset}/>
         <style global jsx>{`
@@ -47,6 +44,7 @@ function Home({initialLayoutType, initialLayout}) {
         }
         html, body {
             background-color: #f0f0f3;
+            margin: 0
         }
       `}</style>
         <ResetButton resetHandler={switchReset}/>
