@@ -5,7 +5,7 @@ $shadow-spacing: $listItemSize / 40
 $shadow-blur: $listItemSize / 20
 $opacity: 50%
 $linesWidth: $listItemSize / 1.8
-$linesHeight: $listItemSize / 20
+$linesHeight: $listItemSize / 17
 
 .navContainer
   grid-area: nav
@@ -22,12 +22,14 @@ $linesHeight: $listItemSize / 20
     width: $listItemSize
     height: $listItemSize
     border-radius: 50%
-    background-color: #e67e22
     transition: all 0.3s ease-in-out
     -webkit-transition: all 0.3s ease-in-out
     cursor: pointer
     text-align: center
-    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#e67e22, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#e67e22, 0.8)
+    background: darken($color-light, 1.0)
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), -$shadow-spacing -$shadow-spacing $shadow-blur rgba(255, 255, 255, 0.8)
+    //background-color: #e67e22
+    //box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#e67e22, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#e67e22, 0.8)
 
     .linesFlexDiv
       text-align: start
@@ -40,12 +42,13 @@ $linesHeight: $listItemSize / 20
       width: 100%
       transition: all .3s ease-in-out
       -webkit-transition: all 0.3s ease-in-out
+      overflow: hidden
 
     .lines
       width: $linesWidth
       height: $linesHeight
-      background: #f0f0f3
-      border-radius: $listItemSize / 2
+      background: $color-dark
+      border-radius: 10px
       transition: all .3s ease-in-out
       -webkit-transition: all 0.3s ease-in-out
 
@@ -54,8 +57,8 @@ $linesHeight: $listItemSize / 20
         position: absolute
         width: $linesWidth
         height: $linesHeight
-        background: #f0f0f3
-        border-radius: $listItemSize / 2
+        background: $color-dark
+        border-radius: 10px
         transition: all .3s ease-in-out
         -webkit-transition: all 0.3s ease-in-out
 
@@ -83,8 +86,7 @@ $linesHeight: $listItemSize / 20
 
     &:checked ~ .navPopupAnchor
       border-radius: $key-radius / 1.5
-      background-color: #2980b9
-      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#2980b9, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#2980b9, 0.8)
+      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), -$shadow-spacing -$shadow-spacing $shadow-blur rgba(255, 255, 255, 0.8)
       transform: rotateZ(90deg)
 
       .lines
@@ -92,12 +94,12 @@ $linesHeight: $listItemSize / 20
         box-shadow: none
 
         &::before
-          transform: rotate(45deg) translate(2 * $listItemSize, -2 * $listItemSize)
-          width: $linesWidth * 1.5
+          transform: rotate(45deg) translate(2 * $listItemSize, -1.97 * $listItemSize)
+          width: $linesWidth * 1.65
 
         &::after
-          transform: rotate(-45deg) translate(2 * $listItemSize, 2 * $listItemSize)
-          width: $linesWidth * 1.5
+          transform: rotate(-45deg) translate(1.97 * $listItemSize, 2 * $listItemSize)
+          width: $linesWidth * 1.65
 
     &:checked ~ .navPopupList
       .navPopupAnchor

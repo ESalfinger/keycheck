@@ -41,6 +41,7 @@ function Home({initialLayoutType, initialLayout}) {
         <style global jsx>{`
         * {
             box-sizing: border-box;
+            user-select: none;
         }
         html, body {
             background-color: #f0f0f3;
