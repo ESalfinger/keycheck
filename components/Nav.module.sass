@@ -1,0 +1,130 @@
+@import "data/variables"
+
+$listItemSize: $key-size / 1.5
+$shadow-spacing: $listItemSize / 40
+$shadow-blur: $listItemSize / 20
+$opacity: 50%
+
+//Neumorphism styling
+  font-family: $comfortaa
+  font-size: $key-size / 4
+  text-align: center
+  color: #3D3D3D
+  background: #f0f0f3
+  box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
+  user-select: none
+
+.navContainer
+  grid-area: nav
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  justify-items: flex-start
+  align-self: flex-start
+
+.navPopup
+
+  &Anchor
+    display: block
+    width: $listItemSize
+    height: $listItemSize
+    border-radius: 50%
+    background-color: #e67e22
+    transition: all 0.3s ease-in-out
+    cursor: pointer
+    text-align: center
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#e67e22, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#e67e22, 0.8)
+
+    .linesFlexDiv
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      height: 100%
+
+    .lines
+      margin: $listItemSize / 18
+      width: $listItemSize / 2
+      height: $listItemSize / 15
+      background: #f0f0f3
+      display: block
+      border-radius: $listItemSize / 30
+      -webkit-transition: -webkit-transform 200ms
+      transition: transform 200ms
+
+      &Line1
+        background: #f30700
+        -webkit-transform: translate3d(0, -2px, 0)
+        transform: translate3d(0, -2px, 0)
+        //-webkit-transform: scale(0.9) rotateZ(-45deg) translate(-$listItemSize/20, $listItemSize/30)
+        //transform: scale(0.9) rotateZ(-45deg) translate(-$listItemSize/20, $listItemSize/30)
+
+      &Line2
+        background: #f30700
+        -webkit-transform: translate3d(0, -2px, 0)
+        transform: translate3d(0, -2px, 0)
+        //display: none
+
+      &Line3
+        background: #f30700
+        -webkit-transform: translate3d(0, -2px, 0)
+        transform: translate3d(0, -2px, 0)
+        //-webkit-transform: scale(0.9) rotateZ(45deg) translate(-$listItemSize/20, -$listItemSize/30)
+        //transform: scale(0.9) rotateZ(45deg) translate(-$listItemSize/20, -$listItemSize/30)
+
+  &List
+    margin: 0
+    padding: 0
+    list-style: none
+    z-index: -1
+
+    & > li
+      padding: $listItemSize / 10 0 $listItemSize / 10 0
+
+      .navPopupAnchor
+        opacity: 0
+        transform: translate(0,0) scale3d(0,0,0)
+
+  &Checker
+    display: none
+    /** &:checked 에 대한 IE8 Polyfill 마련 */
+    &:checked ~ .navPopupAnchor
+      border-radius: $key-radius / 1.5
+      background-color: #2980b9
+      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#2980b9, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#2980b9, 0.8)
+      transform: rotateZ(90deg)
+
+    &:checked ~ .navPopupList
+      .navPopupAnchor
+        opacity: 1
+
+      /** transform 은 top, left로 대신한다 (IE8 Polyfill) */
+      .navPopupItem:nth-of-type(1) .navPopupAnchor
+        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transition-delay: 0s
+        background: rgba(#6BE1B7, $opacity)
+        box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#6BE1B7, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#6BE1B7, 0.8)
+
+      .navPopupItem:nth-of-type(2) .navPopupAnchor
+        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transition-delay: 0.1s
+        background-color: rgba(#46DCE6, $opacity)
+        box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
+
+      .navPopupItem:nth-of-type(3) .navPopupAnchor
+        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transition-delay: 0.2s
+        background-color: rgba(#5970E7, $opacity)
+        box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#5970E7, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#5970E7, 0.8)
+
+      .navPopupItem:nth-of-type(4) .navPopupAnchor
+        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transition-delay: 0.3s
+        background-color: rgba(#9B5BFF, $opacity)
+        box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#9B5BFF, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#9B5BFF, 0.8)
+
+      .navPopupItem:nth-of-type(5) .navPopupAnchor
+        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transition-delay: 0.4s
+        background-color: rgba(#FE9D50, $opacity)
+        box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#FE9D50, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#FE9D50, 0.8)
