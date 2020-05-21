@@ -21,13 +21,13 @@
   font-family: $comfortaa
   font-size: $key-size / 4
   text-align: center
-  color: #3D3D3D
-  background: #f0f0f3
+  color: $color-dark
+  background: $color-light
   box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
   user-select: none
 
 .active
-  background: darken(#f0f0f3, 1.0)
+  background: darken($color-light, 1.0)
   box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
   font-size: $key-size / 4 * $oversize-multiplicator
 

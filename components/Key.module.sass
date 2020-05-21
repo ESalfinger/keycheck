@@ -13,8 +13,8 @@
   font-family: $comfortaa
   font-size: $key-size / 3
   text-align: center
-  color: #3D3D3D
-  background: #f0f0f3
+  color: $color-dark
+  background: $color-light
   box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
 
   //Unit sizing
@@ -100,7 +100,7 @@
       position: absolute
 
     &::before
-      background: #f0f0f3
+      background: $color-light
       border-radius: $key-radius 0 0 $key-radius
       height: $key-size
       left: -$key-size/4
@@ -109,15 +109,15 @@
 
     &::after
       border-top-right-radius: $key-radius
-      box-shadow: -$key-gutter $key-gutter 0 0 #f0f0f3 inset
+      box-shadow: -$key-gutter $key-gutter 0 0 $color-light inset
       height: $key-gutter * 2
       left: -$key-gutter
       top: $key-size - $key-gutter
       width: $key-gutter * 2
 
   &.dead
-    background: #3D3D3D
-    color: #f0f0f3
+    background: $color-dark
+    color: $color-light
 
   &.active
     background: rgba(#68DEB3, .5)
