@@ -4,15 +4,8 @@ $listItemSize: $key-size / 1.5
 $shadow-spacing: $listItemSize / 40
 $shadow-blur: $listItemSize / 20
 $opacity: 50%
-
-//Neumorphism styling
-  font-family: $comfortaa
-  font-size: $key-size / 4
-  text-align: center
-  color: #3D3D3D
-  background: #f0f0f3
-  box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
-  user-select: none
+$linesWidth: $listItemSize / 1.8
+$linesHeight: $listItemSize / 20
 
 .navContainer
   grid-area: nav
@@ -31,46 +24,46 @@ $opacity: 50%
     border-radius: 50%
     background-color: #e67e22
     transition: all 0.3s ease-in-out
+    -webkit-transition: all 0.3s ease-in-out
     cursor: pointer
     text-align: center
     box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#e67e22, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#e67e22, 0.8)
 
     .linesFlexDiv
+      text-align: start
+      position: relative
       display: flex
       flex-direction: column
       align-items: center
       justify-content: center
       height: 100%
+      width: 100%
+      transition: all .3s ease-in-out
+      -webkit-transition: all 0.3s ease-in-out
 
     .lines
-      margin: $listItemSize / 18
-      width: $listItemSize / 2
-      height: $listItemSize / 15
+      width: $linesWidth
+      height: $linesHeight
       background: #f0f0f3
-      display: block
-      border-radius: $listItemSize / 30
-      -webkit-transition: -webkit-transform 200ms
-      transition: transform 200ms
+      border-radius: $listItemSize / 2
+      transition: all .3s ease-in-out
+      -webkit-transition: all 0.3s ease-in-out
 
-      &Line1
-        background: #f30700
-        -webkit-transform: translate3d(0, -2px, 0)
-        transform: translate3d(0, -2px, 0)
-        //-webkit-transform: scale(0.9) rotateZ(-45deg) translate(-$listItemSize/20, $listItemSize/30)
-        //transform: scale(0.9) rotateZ(-45deg) translate(-$listItemSize/20, $listItemSize/30)
+      &::after, &::before
+        content: ''
+        position: absolute
+        width: $linesWidth
+        height: $linesHeight
+        background: #f0f0f3
+        border-radius: $listItemSize / 2
+        transition: all .3s ease-in-out
+        -webkit-transition: all 0.3s ease-in-out
 
-      &Line2
-        background: #f30700
-        -webkit-transform: translate3d(0, -2px, 0)
-        transform: translate3d(0, -2px, 0)
-        //display: none
+      &::before
+        transform: translateY(-3 * $linesHeight)
 
-      &Line3
-        background: #f30700
-        -webkit-transform: translate3d(0, -2px, 0)
-        transform: translate3d(0, -2px, 0)
-        //-webkit-transform: scale(0.9) rotateZ(45deg) translate(-$listItemSize/20, -$listItemSize/30)
-        //transform: scale(0.9) rotateZ(45deg) translate(-$listItemSize/20, -$listItemSize/30)
+      &::after
+        transform: translateY(3 * $linesHeight)
 
   &List
     margin: 0
@@ -87,18 +80,29 @@ $opacity: 50%
 
   &Checker
     display: none
-    /** &:checked 에 대한 IE8 Polyfill 마련 */
+
     &:checked ~ .navPopupAnchor
       border-radius: $key-radius / 1.5
       background-color: #2980b9
       box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#2980b9, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#2980b9, 0.8)
       transform: rotateZ(90deg)
 
+      .lines
+        transform: translateX(-3 * $listItemSize)
+        box-shadow: none
+
+        &::before
+          transform: rotate(45deg) translate(2 * $listItemSize, -2 * $listItemSize)
+          width: $linesWidth * 1.5
+
+        &::after
+          transform: rotate(-45deg) translate(2 * $listItemSize, 2 * $listItemSize)
+          width: $linesWidth * 1.5
+
     &:checked ~ .navPopupList
       .navPopupAnchor
         opacity: 1
 
-      /** transform 은 top, left로 대신한다 (IE8 Polyfill) */
       .navPopupItem:nth-of-type(1) .navPopupAnchor
         transform: translate(0%, $listItemSize) scale3d(1,1,1)
         transition-delay: 0s

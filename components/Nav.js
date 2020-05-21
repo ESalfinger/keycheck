@@ -7,9 +7,7 @@ export function Nav(props) {
                 <input className={styles.navPopupChecker} id="nav-popup-checker" type="checkbox"/>
                 <label className={styles.navPopupAnchor} htmlFor="nav-popup-checker">
                     <div className={styles.linesFlexDiv}>
-                        <span className={styles.lines}/>
-                        <span className={styles.lines}/>
-                        <span className={styles.lines}/>
+                        <div className={styles.lines}/>
                     </div>
                 </label>
                 <ul className={styles.navPopupList}>
