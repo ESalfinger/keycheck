@@ -20,7 +20,7 @@ export function Nav(props) {
                 </label>
                 <ul className={styles.navPopupList}>
                     <li className={styles.navPopupItem}><a className={styles.navPopupAnchor} onClick={swapLayout}>{layout === "ansi" ? "ISO" : "ANSI"}</a></li>
-                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
+                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}><img src={'./palette.svg'} alt={"palette"} className={styles.paletteIcon}/></a></li>
                     <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
                     <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
                     <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>

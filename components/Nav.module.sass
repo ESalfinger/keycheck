@@ -1,11 +1,18 @@
 @import "data/variables"
 
-$listItemSize: $key-size / 1.5
+$listItemSize: $key-size / 1.3
 $shadow-spacing: $listItemSize / 40
 $shadow-blur: $listItemSize / 20
 $opacity: 50%
 $linesWidth: $listItemSize / 1.8
 $linesHeight: $listItemSize / 17
+
+.paletteIcon
+  max-width: $listItemSize / 1.5
+  filter: change_color($color-dark)
+  height: auto
+  align-self: center
+  justify-self: center
 
 .navContainer
   grid-area: nav
@@ -81,7 +88,8 @@ $linesHeight: $listItemSize / 17
         opacity: 0
         transform: translate(0,0) scale3d(0,0,0)
         font-family: $comfortaa
-        font-size: $key-size / 6
+        font-size: $listItemSize / 3.5
+        color: $color-dark
         justify-content: center
         display: flex
         flex-direction: column
@@ -111,6 +119,10 @@ $linesHeight: $listItemSize / 17
       .navPopupAnchor
         opacity: 1
 
+        &:active
+          font-size: $listItemSize / 3.5 * $standard-multiplicator
+          padding-bottom: $listItemSize / 15
+
       .navPopupItem:nth-of-type(1) .navPopupAnchor
         transform: translate(0%, $listItemSize) scale3d(1,1,1)
         background: rgba(#6BE1B7, $opacity)
@@ -118,13 +130,15 @@ $linesHeight: $listItemSize / 17
 
         &:active
           box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#6BE1B7, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#6BE1B7, 0.8)
-          font-size: $key-size / 6 * $standard-multiplicator
 
       .navPopupItem:nth-of-type(2) .navPopupAnchor
         transform: translate(0%, $listItemSize) scale3d(1,1,1)
         transition-delay: 0.1s
         background-color: rgba(#46DCE6, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
+
+        &:active
+          box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
 
       .navPopupItem:nth-of-type(3) .navPopupAnchor
         transform: translate(0%, $listItemSize) scale3d(1,1,1)
