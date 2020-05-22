@@ -1,6 +1,14 @@
 import styles from "./Nav.module.sass";
+import {useState} from "react";
 
 export function Nav(props) {
+    const [layout, setLayout] = useState(props.active);
+    function swapLayout() {
+        let val = layout === "ansi" ? "iso" : "ansi";
+        setLayout(val);
+        props.setLayout(val);
+    }
+
     return (
         <div className={styles.navContainer}>
             <nav className={styles.navPopup}>
@@ -11,11 +19,11 @@ export function Nav(props) {
                     </div>
                 </label>
                 <ul className={styles.navPopupList}>
-                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor} href="#"/></li>
-                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor} href="#"/></li>
-                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor} href="#"/></li>
-                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor} href="#"/></li>
-                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor} href="#"/></li>
+                    <li className={styles.navPopupItem} onClick={swapLayout}><a className={styles.navPopupAnchor}>{layout === "ansi" ? "ISO" : "ANSI"}</a></li>
+                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
+                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
+                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
+                    <li className={styles.navPopupItem}><a className={styles.navPopupAnchor}/></li>
                 </ul>
             </nav>
         </div>

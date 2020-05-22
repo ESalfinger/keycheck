@@ -39,7 +39,7 @@ function Home({initialLayoutType, initialLayout}) {
             <title>KeyCheck | Check your keys in style!</title>
         </Head>
         <Logo/>
-        <Nav />
+        <Nav setLayout={handleLayoutSelection} active={layout}/>
         <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType}/>
         <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset}/>
         <style global jsx>{`
