@@ -16,6 +16,18 @@
   width: $key-size * 3
   border-radius: $key-radius
   cursor: pointer
+  border: none
+
+  &:focus
+    outline: none
+
+  &:disabled
+    background: $color-dark
+    color: $color-light
+
+    .sixtyFivePercentIcon
+      filter: grayscale(100%)
+
 
   //Neumorphism styling
   font-family: $comfortaa

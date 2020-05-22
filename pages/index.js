@@ -21,8 +21,14 @@ function Home({initialLayoutType, initialLayout}) {
     }
 
     function handleLayoutSelection(layout) {
+        let val;
+
         setLayout(layout);
-        setLayoutData(require("../data/" + layout + "/" + layoutType + ".json"));
+        if (layout === "iso" && layoutType === "65p") {
+            val = "100p";
+            setLayoutType(val);
+        }
+        setLayoutData(require("../data/" + layout + "/" + (val || layoutType) + ".json"));
     }
 
     useEffect(() => {
@@ -40,7 +46,7 @@ function Home({initialLayoutType, initialLayout}) {
         </Head>
         <Logo/>
         <Nav setLayout={handleLayoutSelection} active={layout}/>
-        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType}/>
+        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"}/>
         <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset}/>
         <style global jsx>{`
         * {

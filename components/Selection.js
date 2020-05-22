@@ -11,12 +11,14 @@ export function Selection(props) {
     }
 
     useEffect(() => {
+        if (document.getElementsByClassName(styles.active).length > 0)
+            document.getElementsByClassName(styles.active)[0].classList.remove(styles.active);
         document.getElementById(props.active).classList.add(styles.active);
     });
 
     return (
         <div className={styles.selection}>
-            <div id={"100p"} className={`${styles.selectionBox}`} onClick={(e) => handleClick( "100p", e)}>
+            <button id={"100p"} className={`${styles.selectionBox}`} onClick={(e) => handleClick( "100p", e)}>
                 <span style={noClickStyle}>Full Size (100%)</span><br/>
                 <img src={'keyboardFullSize.svg'}
                      alt={"keyboard full size"}
@@ -24,8 +26,8 @@ export function Selection(props) {
                      draggable="false"
                      style={noClickStyle}
                 />
-            </div>
-            <div id={"80p"} className={styles.selectionBox} onClick={(e) => handleClick("80p", e)}>
+            </button>
+            <button id={"80p"} className={styles.selectionBox} onClick={(e) => handleClick("80p", e)}>
                 <span style={noClickStyle}>Tenkeyless (80%)</span><br/>
                 <img src={'keyboard80.svg'}
                      alt={"keyboard 80%"}
@@ -33,8 +35,8 @@ export function Selection(props) {
                      draggable="false"
                      style={noClickStyle}
                 />
-            </div>
-            <div id="65p"className={styles.selectionBox} onClick={(e) => handleClick("65p", e)}>
+            </button>
+            <button id="65p"className={styles.selectionBox} disabled={props.disable} onClick={(e) => handleClick("65p", e)}>
                 <span style={noClickStyle}>65%</span><br/>
                 <img src={'keyboard65.svg'}
                      alt={"keyboard 65%"}
@@ -42,8 +44,8 @@ export function Selection(props) {
                      draggable="false"
                      style={noClickStyle}
                 />
-            </div>
-            <div id="60p" className={styles.selectionBox} onClick={(e) => handleClick("60p", e)}>
+            </button>
+            <button id="60p" className={styles.selectionBox} onClick={(e) => handleClick("60p", e)}>
                 <span style={noClickStyle}>60%</span><br/>
                 <img src={'keyboard60.svg'}
                      alt={"keyboard 60%"}
@@ -51,7 +53,7 @@ export function Selection(props) {
                      draggable="false"
                      style={noClickStyle}
                 />
-            </div>
+            </button>
         </div>
     );
 }
