@@ -182,15 +182,7 @@
     "values": [],
     "style": [
       "empty",
-      "u4-5"
-    ],
-    "key": []
-  },
-  {
-    "values": [],
-    "style": [
-      "empty",
-      "u23"
+      "u19-5"
     ],
     "key": []
   },
@@ -319,10 +311,10 @@
       "?",
       "ß"
     ],
-    "style": [],
+    "style": ["lower"],
     "key": [
       "?",
-      "ß"
+      "SS"
     ]
   },
   {
@@ -648,7 +640,7 @@
   },
   {
     "values": [
-      "ö",
+      "ö"
     ],
     "style": [],
     "key": [
@@ -657,7 +649,7 @@
   },
   {
     "values": [
-      "ä",
+      "ä"
     ],
     "style": [],
     "key": [
@@ -675,50 +667,20 @@
       "#"
     ]
   },
-
   {
     "values": [],
     "style": [
       "empty",
-      "u4"
+      "u3-5"
     ],
     "key": []
   },
-  {
-    "values": [
-      "4"
-    ],
-    "style": [],
-    "key": [
-      "NUM4"
-    ]
-  },
-  {
-    "values": [
-      "5"
-    ],
-    "style": [],
-    "key": [
-      "NUM5"
-    ]
-  },
-  {
-    "values": [
-      "6"
-    ],
-    "style": [],
-    "key": [
-      "NUM6"
-    ]
-  },
-
-
 
   {
     "values": [
       "Shift"
     ],
-    "style": ["u2-25", "left"],
+    "style": ["u1-25", "left"],
     "key": [
       "SHIFT"
     ]
