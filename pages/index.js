@@ -7,6 +7,7 @@ import {ResetButton} from "../components/ResetButton";
 import Cookie from "js-cookie";
 import cookie from "cookie";
 import styles from "./index.module.sass";
+import Head from 'next/head'
 
 function Home({initialLayoutType, initialLayout}) {
     const [layoutType, setLayoutType] = useState(() => initialLayoutType);
@@ -34,6 +35,9 @@ function Home({initialLayoutType, initialLayout}) {
     }
 
     return <div className={styles.containerStyle}>
+        <Head>
+            <title>KeyCheck | Check your keys in style!</title>
+        </Head>
         <Logo/>
         <Nav />
         <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType}/>
