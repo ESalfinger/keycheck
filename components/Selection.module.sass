@@ -38,10 +38,20 @@
   box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
   user-select: none
 
+  &.dark
+    color: $color-light
+    background: $color-dark
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba($color-light, 0.1), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-light, 0.2)
+
+
 .active
   background: darken($color-light, 1.0)
   box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
   font-size: $key-size / 4 * $oversize-multiplicator
+
+  &.dark
+    box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba($color-light, 0.1), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-light, 0.2)
+
 
   .fullSizeIcon
     width: $key-size * 2 * $oversize-multiplicator

@@ -14,6 +14,7 @@ function Home({initialLayoutType, initialLayout}) {
     const [layout, setLayout] = useState(() => initialLayout);
     const [layoutData, setLayoutData] = useState(require("../data/" + layout + "/" + layoutType + ".json"));
     const [reset, setReset] = useState(false);
+    const [theme, setTheme] = useState("light"); //Theme switcher
 
     function handleLayoutTypeSelection(layoutType) {
         setLayoutType(layoutType);
@@ -46,19 +47,19 @@ function Home({initialLayoutType, initialLayout}) {
         </Head>
         <Logo/>
         <Nav setLayout={handleLayoutSelection} active={layout}/>
-        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"}/>
+        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"} theme={theme}/>
         <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset}/>
+        <ResetButton resetHandler={switchReset}/>
         <style global jsx>{`
         * {
             box-sizing: border-box;
             user-select: none;
         }
         html, body {
-            background-color: #f0f0f3;
+            background-color: ${theme === "dark" ? "#3D3D3D" : "#f0f0f3"};
             margin: 0
         }
       `}</style>
-        <ResetButton resetHandler={switchReset}/>
     </div>
 }
 
