@@ -17,6 +17,11 @@
   background: $color-light
   box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
 
+  &.dark
+    color: lighten($color-dark, 20%)
+    background: $color-dark
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1)
+
   //Unit sizing
   &.u1-25
     grid-column-end: span 5
@@ -95,6 +100,16 @@
     box-shadow: none
     filter: drop-shadow($shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7)) drop-shadow($shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8))
 
+    &.dark
+      filter: drop-shadow($shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5)) drop-shadow($shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1))
+
+      &::before, &::after
+        background: $color-dark
+
+      &::after
+        background: rgba(black, 0)
+        box-shadow: -$key-gutter $key-gutter 0 0 $color-dark inset
+
     &::before, &::after
       content: ""
       position: absolute
@@ -116,13 +131,22 @@
       width: $key-gutter * 2
 
   &.dead
-    background: $color-dark
-    color: $color-light
+    background: #e4e4e7
+    color: #a9a9ac
+
+    &.dark
+      background: darken($color-dark, 5.0)
+      color: lighten($color-dark, 15%)
+      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.6), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.2)
 
   &.active
-    background: rgba(#68DEB3, .5)
-    box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
+    background: rgba($color-pressed, .5)
+    box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba($color-pressed, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-pressed, 0.8)
     font-size: $key-size / 3 * $standard-multiplicator
+
+    &.dark
+      background: rgba($color-pressed, .8)
+      box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(darken($color-pressed, 20%), 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(darken($color-pressed, 20%), 0.8)
 
     &.u1-25
       grid-column-end: span 5
@@ -162,25 +186,44 @@
     &.return
       box-shadow: none
       font-size: $key-size / 3 * $standard-multiplicator
-      background: rgba(#68DEB3, .5)
-      filter: drop-shadow($shadow-spacing -$shadow-spacing $shadow-blur #68DEB3)
-      &::before
-        background: rgba(#68DEB3, .5)
-      &::after
-        box-shadow: -$key-gutter $key-gutter 0 0 rgba(#68DEB3, .5) inset
+      background: rgba($color-pressed, .5)
+      filter: drop-shadow($shadow-spacing -$shadow-spacing $shadow-blur $color-pressed)
 
+      &.dark
+        filter: drop-shadow($shadow-spacing -$shadow-spacing $shadow-blur darken($color-pressed, 20%))
+
+        &::after
+          box-shadow: -$key-gutter $key-gutter 0 0 rgba(darken($color-pressed, 20%), .5) inset
+
+      &::before
+        background: rgba($color-pressed, .5)
+
+      &::after
+        box-shadow: -$key-gutter $key-gutter 0 0 rgba($color-pressed, .5) inset
 
   &.pressed
-    background: rgba(#68DEB3, .5)
-    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, 0.8)
+    background: rgba($color-pressed, .5)
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba($color-pressed, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-pressed, 0.8)
+
+    &.dark
+      background: rgba($color-pressed, .8)
+      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(darken($color-pressed, 20%), 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(darken($color-pressed, 20%), 0.8)
 
     &.return
       box-shadow: none
-      filter: drop-shadow($shadow-spacing $shadow-spacing $shadow-blur rgba(#68DEB3, .7)) drop-shadow($shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#68DEB3, .8))
+      filter: drop-shadow($shadow-spacing $shadow-spacing $shadow-blur rgba($color-pressed, .5)) drop-shadow($shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-pressed, .5))
+
+      &.dark
+        background: rgba($color-pressed, .5)
+
+        &::after
+          box-shadow: -$key-gutter $key-gutter 0 0 rgba(darken($color-pressed, 20%), .5) inset
+
       &::before
-        background: rgba(#68DEB3, .5)
+        background: rgba($color-pressed, .5)
+
       &::after
-        box-shadow: -$key-gutter $key-gutter 0 0 rgba(#68DEB3, .5) inset
+        box-shadow: -$key-gutter $key-gutter 0 0 rgba($color-pressed, .5) inset
 
   span
     padding: $key_size / 22

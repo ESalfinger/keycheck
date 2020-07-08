@@ -21,10 +21,18 @@
   box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
   color: #f45e61
 
+  &.dark
+    background: $color-dark
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1)
+
   &:active
     background: darken($color-light, 1.0)
     box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(255, 255, 255, 0.8)
     font-size: $key-size / 3.5 * $oversize-multiplicator
+
+    &.dark
+      background: darken($color-dark, 1.0)
+      box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1)
 
   &:hover .spin
     -webkit-transform: rotate(360deg)

@@ -40,6 +40,7 @@ export function Keyboard(props) {
             {props.data.map((key, index) =>
                 <Key keyVals={key.values}
                      styleName={key.style}
+                     theme={props.theme}
                      clicked={[clicked.get(key.key[0]), clicked.get(key.key[1])].includes("active") ? "active" : clicked.get(key.key[0]) || clicked.get(key.key[1])}
                      key={index}/>
             )}

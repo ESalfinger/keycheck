@@ -38,6 +38,10 @@ $linesHeight: $listItemSize / 17
     //background-color: #e67e22
     //box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#e67e22, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#e67e22, 0.8)
 
+    &.dark
+      background: $color-dark
+      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1)
+
     .linesFlexDiv
       text-align: start
       position: relative
@@ -58,6 +62,12 @@ $linesHeight: $listItemSize / 17
       border-radius: 10px
       transition: all .3s ease-in-out
       -webkit-transition: all 0.3s ease-in-out
+
+      &.dark
+        background: lighten($color-dark, 25%)
+
+        &::after, &::before
+          background: lighten($color-dark, 25%)
 
       &::after, &::before
         content: ''
@@ -86,7 +96,7 @@ $linesHeight: $listItemSize / 17
 
       .navPopupAnchor
         opacity: 0
-        transform: translate(0,0) scale3d(0,0,0)
+        transform: translate(0, 0) scale3d(0, 0, 0)
         font-family: $comfortaa
         font-size: $listItemSize / 3.5
         color: $color-dark
@@ -95,6 +105,9 @@ $linesHeight: $listItemSize / 17
         flex-direction: column
         text-align: center
 
+        &.dark
+          color: darken($color-dark, 20%)
+
   &Checker
     display: none
 
@@ -102,6 +115,9 @@ $linesHeight: $listItemSize / 17
       border-radius: $key-radius / 1.5
       box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), -$shadow-spacing -$shadow-spacing $shadow-blur rgba(255, 255, 255, 0.8)
       transform: rotateZ(90deg)
+
+      &.dark
+        box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1)
 
       .lines
         transform: translateX(-3 * $listItemSize)
@@ -124,7 +140,7 @@ $linesHeight: $listItemSize / 17
           padding-bottom: $listItemSize / 15
 
       .navPopupItem:nth-of-type(1) .navPopupAnchor
-        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transform: translate(0%, $listItemSize) scale3d(1, 1, 1)
         background: rgba(#6BE1B7, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#6BE1B7, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#6BE1B7, 0.8)
 
@@ -132,7 +148,7 @@ $linesHeight: $listItemSize / 17
           box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#6BE1B7, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#6BE1B7, 0.8)
 
       .navPopupItem:nth-of-type(2) .navPopupAnchor
-        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transform: translate(0%, $listItemSize) scale3d(1, 1, 1)
         transition-delay: 0.1s
         background-color: rgba(#46DCE6, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
@@ -141,19 +157,19 @@ $linesHeight: $listItemSize / 17
           box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
 
       .navPopupItem:nth-of-type(3) .navPopupAnchor
-        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transform: translate(0%, $listItemSize) scale3d(1, 1, 1)
         transition-delay: 0.2s
         background-color: rgba(#5970E7, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#5970E7, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#5970E7, 0.8)
 
       .navPopupItem:nth-of-type(4) .navPopupAnchor
-        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transform: translate(0%, $listItemSize) scale3d(1, 1, 1)
         transition-delay: 0.3s
         background-color: rgba(#9B5BFF, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#9B5BFF, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#9B5BFF, 0.8)
 
       .navPopupItem:nth-of-type(5) .navPopupAnchor
-        transform: translate(0%, $listItemSize) scale3d(1,1,1)
+        transform: translate(0%, $listItemSize) scale3d(1, 1, 1)
         transition-delay: 0.4s
         background-color: rgba(#FE9D50, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#FE9D50, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#FE9D50, 0.8)

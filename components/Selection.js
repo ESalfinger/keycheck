@@ -20,7 +20,7 @@ export function Selection(props) {
         <div className={styles.selection}>
             <button id={"100p"} className={styles.selectionBox + " " + styles[props.theme]} onClick={(e) => handleClick("100p", e)}>
                 <span style={noClickStyle}>Full Size (100%)</span><br/>
-                <img src={'keyboardFullSize.svg'}
+                <img src={`${props.theme === "dark" ? 'keyboardFullSizeDark.svg' : 'keyboardFullSize.svg'}`}
                      alt={"keyboard full size"}
                      className={styles.fullSizeIcon}
                      draggable="false"
@@ -29,7 +29,7 @@ export function Selection(props) {
             </button>
             <button id={"80p"} className={styles.selectionBox + " " + styles[props.theme]} onClick={(e) => handleClick("80p", e)}>
                 <span style={noClickStyle}>Tenkeyless (80%)</span><br/>
-                <img src={'keyboard80.svg'}
+                <img src={`${props.theme === "dark" ? 'keyboard80Dark.svg' : 'keyboard80.svg'}`}
                      alt={"keyboard 80%"}
                      className={styles.eightyPercentIcon}
                      draggable="false"
@@ -39,7 +39,7 @@ export function Selection(props) {
             <button id="65p" className={styles.selectionBox + " " + styles[props.theme]} disabled={props.disable}
                     onClick={(e) => handleClick("65p", e)}>
                 <span style={noClickStyle}>65%</span><br/>
-                <img src={'keyboard65.svg'}
+                <img src={`${props.theme === "dark" ? 'keyboard65Dark.svg' : 'keyboard65.svg'}`}
                      alt={"keyboard 65%"}
                      className={styles.sixtyFivePercentIcon}
                      draggable="false"
@@ -48,7 +48,7 @@ export function Selection(props) {
             </button>
             <button id="60p" className={styles.selectionBox + " " + styles[props.theme]} onClick={(e) => handleClick("60p", e)}>
                 <span style={noClickStyle}>60%</span><br/>
-                <img src={'keyboard60.svg'}
+                <img src={`${props.theme === "dark" ? 'keyboard60Dark.svg' : 'keyboard60.svg'}`}
                      alt={"keyboard 60%"}
                      className={styles.sixtyPercentIcon}
                      draggable="false"

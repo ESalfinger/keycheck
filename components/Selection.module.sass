@@ -24,10 +24,15 @@
   &:disabled
     background: $color-dark
     color: $color-light
+    cursor: default
+
+    &.dark
+      background: darken($color-dark, 5.0)
+      color: lighten($color-dark, 15%)
+      box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.6), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.2)
 
     .sixtyFivePercentIcon
       filter: grayscale(100%)
-
 
   //Neumorphism styling
   font-family: $comfortaa
@@ -39,9 +44,9 @@
   user-select: none
 
   &.dark
-    color: $color-light
+    color: lighten($color-dark, 25%)
     background: $color-dark
-    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba($color-light, 0.1), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-light, 0.2)
+    box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.1)
 
 
 .active
@@ -50,8 +55,8 @@
   font-size: $key-size / 4 * $oversize-multiplicator
 
   &.dark
-    box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba($color-light, 0.1), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba($color-light, 0.2)
-
+    background: darken($color-dark, 1.0)
+    box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(black, 0.5), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(black, 0.05)
 
   .fullSizeIcon
     width: $key-size * 2 * $oversize-multiplicator

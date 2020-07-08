@@ -32,6 +32,10 @@ function Home({initialLayoutType, initialLayout}) {
         setLayoutData(require("../data/" + layout + "/" + (val || layoutType) + ".json"));
     }
 
+    function handleThemeSelection(theme) {
+        setTheme(theme);
+    }
+
     useEffect(() => {
         Cookie.set('layoutType', layoutType);
         Cookie.set('layout', layout);
@@ -45,11 +49,11 @@ function Home({initialLayoutType, initialLayout}) {
         <Head>
             <title>KeyCheck | Check your keys in style!</title>
         </Head>
-        <Logo/>
-        <Nav setLayout={handleLayoutSelection} active={layout}/>
+        <Logo theme={theme}/>
+        <Nav setLayout={handleLayoutSelection} setTheme={handleThemeSelection} active={layout} theme={theme}/>
         <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"} theme={theme}/>
-        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset}/>
-        <ResetButton resetHandler={switchReset}/>
+        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme}/>
+        <ResetButton resetHandler={switchReset} theme={theme}/>
         <style global jsx>{`
         * {
             box-sizing: border-box;
