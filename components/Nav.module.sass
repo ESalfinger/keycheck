@@ -29,14 +29,12 @@ $linesHeight: $listItemSize / 17
     width: $listItemSize
     height: $listItemSize
     border-radius: 50%
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out
-    -webkit-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-radius 0.3s ease-in-out
+    -webkit-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-radius 0.3s ease-in-out
     cursor: pointer
     text-align: center
     background: darken($color-light, 1.0)
     box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(166, 180, 200, 0.7), -$shadow-spacing -$shadow-spacing $shadow-blur rgba(255, 255, 255, 0.8)
-    //background-color: #e67e22
-    //box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#e67e22, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#e67e22, 0.8)
 
     &.dark
       background: $color-dark
@@ -51,8 +49,6 @@ $linesHeight: $listItemSize / 17
       justify-content: center
       height: 100%
       width: 100%
-      transition: all .3s ease-in-out
-      -webkit-transition: all 0.3s ease-in-out
       overflow: hidden
 
     .lines
@@ -60,7 +56,7 @@ $linesHeight: $listItemSize / 17
       height: $linesHeight
       background: $color-dark
       border-radius: 10px
-      transition: all .3s ease-in-out
+      transition: all 0.3s ease-in-out
       -webkit-transition: all 0.3s ease-in-out
 
       &.dark
@@ -144,6 +140,13 @@ $linesHeight: $listItemSize / 17
         background: rgba(#6BE1B7, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#6BE1B7, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#6BE1B7, 0.8)
 
+        &.dark
+          background: rgba($color-pressed, 0.9)
+          box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(darken($color-pressed, 20%), 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(darken($color-pressed, 20%), 0.8)
+
+          &:active
+            box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(darken($color-pressed, 20%), 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(darken($color-pressed, 20%), 0.8)
+
         &:active
           box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#6BE1B7, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#6BE1B7, 0.8)
 
@@ -152,6 +155,13 @@ $linesHeight: $listItemSize / 17
         transition-delay: 0.1s
         background-color: rgba(#46DCE6, $opacity)
         box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
+
+        &.dark
+          background: rgba(#46DCE6, 0.9)
+          box-shadow: $shadow-spacing $shadow-spacing $shadow-blur rgba(darken(#46DCE6, 20%), 0.7), $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(darken(#46DCE6, 20%), 0.8)
+
+          &:active
+            box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(darken(#46DCE6, 20%), 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(darken(#46DCE6, 20%), 0.8)
 
         &:active
           box-shadow: inset $shadow-spacing $shadow-spacing $shadow-blur rgba(#46DCE6, 0.7), inset $shadow-spacing*-1 -$shadow-spacing*-1 $shadow-blur rgba(#46DCE6, 0.8)
