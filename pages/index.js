@@ -6,6 +6,7 @@ import {Nav} from "../components/Nav";
 import {ResetButton} from "../components/ResetButton";
 import Cookie from "js-cookie";
 import cookie from "cookie";
+import CookieConsent from "react-cookie-consent";
 import styles from "./index.module.sass";
 import Head from 'next/head'
 
@@ -55,6 +56,10 @@ function Home({initialLayoutType, initialLayout, initialTheme}) {
         <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"} theme={theme}/>
         <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme}/>
         <ResetButton resetHandler={switchReset} theme={theme}/>
+        <CookieConsent debug={true} overlay overlayStyle={{background: "rgba(0, 0, 0, 0.7)"}} containerClasses={styles.cookieConsentStyle} style={{ background: "#f0f0f3", color: "#3d3d3d" }}
+                       buttonStyle={{ background: "#68DEB3", borderRadius: "0.4em", color: "#3D3D3D", padding: "0.8em", boxShadow: "0.15em 0.15em 0.1em #4ea686" }} buttonClasses={styles.cookieConsentButtonStyle}>
+            This website uses cookies to enhance the user experience.
+        </CookieConsent>
         <style global jsx>{`
         * {
             box-sizing: border-box;

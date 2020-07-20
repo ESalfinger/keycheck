@@ -41,7 +41,8 @@ export function Keyboard(props) {
                 <Key keyVals={key.values}
                      styleName={key.style}
                      theme={props.theme}
-                     clicked={[clicked.get(key.key[0]), clicked.get(key.key[1])].includes("active") ? "active" : clicked.get(key.key[0]) || clicked.get(key.key[1])}
+                     clicked={[clicked.get(key.key[0]), clicked.get(key.key[1])].includes("active") ? "active" :
+                         clicked.get(key.key[0]) || clicked.get(key.key[1])}
                      key={index}/>
             )}
         </div>
