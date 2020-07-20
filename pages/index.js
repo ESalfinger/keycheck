@@ -9,12 +9,12 @@ import cookie from "cookie";
 import styles from "./index.module.sass";
 import Head from 'next/head'
 
-function Home({initialLayoutType, initialLayout}) {
+function Home({initialLayoutType, initialLayout, initialTheme}) {
     const [layoutType, setLayoutType] = useState(() => initialLayoutType);
     const [layout, setLayout] = useState(() => initialLayout);
     const [layoutData, setLayoutData] = useState(require("../data/" + layout + "/" + layoutType + ".json"));
     const [reset, setReset] = useState(false);
-    const [theme, setTheme] = useState("light"); //Theme switcher
+    const [theme, setTheme] = useState(() => initialTheme); //Theme switcher
 
     function handleLayoutTypeSelection(layoutType) {
         setLayoutType(layoutType);
@@ -39,7 +39,8 @@ function Home({initialLayoutType, initialLayout}) {
     useEffect(() => {
         Cookie.set('layoutType', layoutType);
         Cookie.set('layout', layout);
-    }, [layoutType, layout]);
+        Cookie.set('theme', theme);
+    }, [layoutType, layout, theme]);
 
     function switchReset() {
         setReset(!reset);
@@ -73,7 +74,8 @@ export async function getServerSideProps({req}) {
     return {
         props: {
             initialLayoutType: cookies.layoutType || "100p",
-            initialLayout: cookies.layout || "ansi"
+            initialLayout: cookies.layout || "ansi",
+            initialTheme: cookies.theme || "light"
         },
     }
 }

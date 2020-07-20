@@ -11,7 +11,7 @@ export function Keyboard(props) {
 
         let key = `${e.location === 2 ? 'RIGHT' : e.location === 3 ? 'NUM' : ''}${e.key.toUpperCase()}`;
         if (e.type === "keydown") {
-            console.log(key);
+            //console.log(key);
             setClicked(new Map(clicked.set(key, "active")));
         } else {
             setClicked(new Map(clicked.set(key, "pressed")));
