@@ -10,12 +10,14 @@ import CookieConsent from "react-cookie-consent";
 import styles from "./index.module.sass";
 import Head from 'next/head'
 
-function Home({initialLayoutType, initialLayout, initialTheme}) {
+function Home({initialLayoutType, initialLayout, initialTheme, initialCookieConsent}) {
     const [layoutType, setLayoutType] = useState(() => initialLayoutType);
     const [layout, setLayout] = useState(() => initialLayout);
     const [layoutData, setLayoutData] = useState(require("../data/" + layout + "/" + layoutType + ".json"));
     const [reset, setReset] = useState(false);
     const [theme, setTheme] = useState(() => initialTheme); //Theme switcher
+    const [cookieConsent, setCookieConsent] = useState(initialCookieConsent);
+    const [disableKeyHandler, setDisableKeyHandler] = useState(true);
 
     function handleLayoutTypeSelection(layoutType) {
         setLayoutType(layoutType);
@@ -38,10 +40,12 @@ function Home({initialLayoutType, initialLayout, initialTheme}) {
     }
 
     useEffect(() => {
-        Cookie.set('layoutType', layoutType);
-        Cookie.set('layout', layout);
-        Cookie.set('theme', theme);
-    }, [layoutType, layout, theme]);
+        if (cookieConsent) {
+            Cookie.set('layoutType', layoutType);
+            Cookie.set('layout', layout);
+            Cookie.set('theme', theme);
+        }
+    }, [layoutType, layout, theme, cookieConsent]);
 
     function switchReset() {
         setReset(!reset);
@@ -53,11 +57,38 @@ function Home({initialLayoutType, initialLayout, initialTheme}) {
         </Head>
         <Logo theme={theme}/>
         <Nav setLayout={handleLayoutSelection} setTheme={handleThemeSelection} active={layout} theme={theme}/>
-        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"} theme={theme}/>
-        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme}/>
+        <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"}
+                   theme={theme}/>
+        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme} disabled={disableKeyHandler}/>
         <ResetButton resetHandler={switchReset} theme={theme}/>
-        <CookieConsent debug={true} overlay overlayStyle={{background: "rgba(0, 0, 0, 0.7)"}} containerClasses={styles.cookieConsentStyle} style={{ background: "#f0f0f3", color: "#3d3d3d" }}
-                       buttonStyle={{ background: "#68DEB3", borderRadius: "0.4em", color: "#3D3D3D", padding: "0.8em", boxShadow: "0.15em 0.15em 0.1em #4ea686" }} buttonClasses={styles.cookieConsentButtonStyle}>
+        <CookieConsent enableDeclineButton overlay flipButtons={true}
+                       overlayStyle={{background: "rgba(0, 0, 0, 0.7)"}}
+                       containerClasses={styles.cookieConsentStyle}
+                       style={{background: "#f0f0f3", color: "#3d3d3d"}}
+                       buttonStyle={{
+                           background: "#68DEB3",
+                           borderRadius: "0.4em",
+                           color: "#3D3D3D",
+                           padding: "0.8em",
+                           boxShadow: "0.15em 0.15em 0.1em #4ea686"
+                       }}
+                       buttonClasses={styles.cookieConsentButtonStyle}
+                       declineButtonClasses={styles.cookieConsentButtonStyle}
+                       declineButtonStyle={{
+                           background: "#f45e61",
+                           borderRadius: "0.4em",
+                           color: "#f0f0f3",
+                           padding: "0.8em",
+                           boxShadow: "0.15em 0.15em 0.1em #bd494b"
+                       }}
+                       onAccept={() => {
+                           setCookieConsent(true);
+                           setDisableKeyHandler(false);
+                       }}
+                       onDecline={() => {
+                           setCookieConsent(false);
+                           setDisableKeyHandler(false);
+                       }}>
             This website uses cookies to enhance the user experience.
         </CookieConsent>
         <style global jsx>{`
@@ -80,7 +111,8 @@ export async function getServerSideProps({req}) {
         props: {
             initialLayoutType: cookies.layoutType || "100p",
             initialLayout: cookies.layout || "ansi",
-            initialTheme: cookies.theme || "light"
+            initialTheme: cookies.theme || "light",
+            initialCookieConsent: cookies.cookieConsent || null
         },
     }
 }

@@ -19,9 +19,10 @@ export function Keyboard(props) {
     }
 
     useEffect(() => {
-        document.addEventListener('keydown', handleKeyPress);
-        document.addEventListener('keyup', handleKeyPress);
-
+        if (!props.disabled) {
+            document.addEventListener('keydown', handleKeyPress);
+            document.addEventListener('keyup', handleKeyPress);
+        }
         return function cleanup() {
             document.removeEventListener("keydown", handleKeyPress);
             document.removeEventListener("keyup", handleKeyPress);
