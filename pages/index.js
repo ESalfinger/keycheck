@@ -17,7 +17,7 @@ function Home({initialLayoutType, initialLayout, initialTheme, initialCookieCons
     const [reset, setReset] = useState(false);
     const [theme, setTheme] = useState(() => initialTheme); //Theme switcher
     const [cookieConsent, setCookieConsent] = useState(initialCookieConsent);
-    const [disableKeyHandler, setDisableKeyHandler] = useState(true);
+    const [disableKeyHandler, setDisableKeyHandler] = useState(initialCookieConsent);
 
     function handleLayoutTypeSelection(layoutType) {
         setLayoutType(layoutType);
@@ -44,6 +44,7 @@ function Home({initialLayoutType, initialLayout, initialTheme, initialCookieCons
             Cookie.set('layoutType', layoutType);
             Cookie.set('layout', layout);
             Cookie.set('theme', theme);
+            setDisableKeyHandler(false);
         }
     }, [layoutType, layout, theme, cookieConsent]);
 
@@ -61,7 +62,7 @@ function Home({initialLayoutType, initialLayout, initialTheme, initialCookieCons
                    theme={theme}/>
         <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme} disabled={disableKeyHandler}/>
         <ResetButton resetHandler={switchReset} theme={theme}/>
-        <CookieConsent enableDeclineButton overlay flipButtons={true}
+        <CookieConsent enableDeclineButton overlay sameSite={"strict"} flipButtons={true}
                        overlayStyle={{background: "rgba(0, 0, 0, 0.7)"}}
                        containerClasses={styles.cookieConsentStyle}
                        style={{background: "#f0f0f3", color: "#3d3d3d"}}
