@@ -16,7 +16,7 @@ function Home({initialLayoutType, initialLayout, initialTheme, initialCookieCons
     const [layoutData, setLayoutData] = useState(require("../data/" + layout + "/" + layoutType + ".json"));
     const [reset, setReset] = useState(false);
     const [theme, setTheme] = useState(() => initialTheme); //Theme switcher
-    const [cookieConsent, setCookieConsent] = useState(initialCookieConsent);
+    const [cookieConsent, setCookieConsent] = useState(JSON.parse(initialCookieConsent));
     const [disableKeyHandler, setDisableKeyHandler] = useState(false);
 
     function handleLayoutTypeSelection(layoutType) {
@@ -118,7 +118,7 @@ export async function getServerSideProps({req}) {
             initialLayoutType: cookies.layoutType || "100p",
             initialLayout: cookies.layout || "ansi",
             initialTheme: cookies.theme || "light",
-            initialCookieConsent: JSON.parse(cookies.CookieConsent) || null
+            initialCookieConsent: cookies.CookieConsent || null
         },
     }
 }
