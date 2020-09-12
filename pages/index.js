@@ -55,12 +55,17 @@ function Home({initialLayoutType, initialLayout, initialTheme, initialCookieCons
     return <div className={styles.containerStyle}>
         <Head>
             <title>KeyCheck | Check your keys in style!</title>
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8"/>
+            <meta name="description"
+                  content="Check if your keyboard keys are all working correctly!
+                  With style and for different form factors and layouts."/>
         </Head>
         <Logo theme={theme}/>
         <Nav setLayout={handleLayoutSelection} setTheme={handleThemeSelection} active={layout} theme={theme}/>
         <Selection selectionHandler={handleLayoutTypeSelection} active={layoutType} disable={layout === "iso"}
                    theme={theme}/>
-        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme} disabled={disableKeyHandler}/>
+        <Keyboard data={layoutData} type={layoutType} isReset={reset} switchReset={switchReset} theme={theme}
+                  disabled={disableKeyHandler}/>
         <ResetButton resetHandler={switchReset} theme={theme}/>
         <CookieConsent enableDeclineButton overlay sameSite={"strict"} flipButtons={true}
                        overlayStyle={{background: "rgba(0, 0, 0, 0.7)"}}
