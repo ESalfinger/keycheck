@@ -59,6 +59,7 @@ function Home({initialLayoutType, initialLayout, initialTheme, initialCookieCons
             <meta name="description"
                   content="Check if your keyboard keys are all working correctly!
                   With style and for different form factors and layouts."/>
+            <meta name="google-site-verification" content="QpbJMGrkuSjZaK1j96s3ud69KvGd1CCRNr_eKs4Xt64" />
         </Head>
         <Logo theme={theme}/>
         <Nav setLayout={handleLayoutSelection} setTheme={handleThemeSelection} active={layout} theme={theme}/>
