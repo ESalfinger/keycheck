@@ -1,30 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Keycheck - Check your keys in style!
+Keycheck is here to help you check if all of your keys are registered correctly.
 
-## Getting Started
+## Goal
+Our goal was to create a key checking website that not only looks better than the alternatives but also offers more functionality. As everyone around the world might have to check his keyboard at some time, we wanted to support not only the ansi layout but also the iso alternative. Moreover because we are keyboard enthusiasts we know that there is not only one size of keyboards so we added support for the most common sizes.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## About the Project
+The project was created in the scope of the fourth semset in our bachelor's degree Mediatechnology and -design at FH OOE Campus Hagenberg.
