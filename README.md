@@ -1,6 +1,8 @@
 # Keycheck - Check your keys in style!
 Keycheck is here to help you check if all of your keys are registered correctly.
 
+![image](https://user-images.githubusercontent.com/14820487/143416211-9a23cfe5-d5bf-486a-bdbd-1e4f493ae9f2.png)
+
 ## Goal
 Our goal was to create a key checking website that not only looks better than the alternatives but also offers more functionality. As everyone around the world might have to check his keyboard at some time, we wanted to support not only the ansi layout but also the iso alternative. Moreover because we are keyboard enthusiasts we know that there is not only one size of keyboards so we added support for the most common sizes.
 
